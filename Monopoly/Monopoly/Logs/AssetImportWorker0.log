@@ -15,11 +15,11 @@ C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63618
+53956
 Successfully changed project path to: C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 18.15 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 18.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.3f1 (8ff31bc5bf5b)
 [Subsystems] Discovering subsystems at path C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/Resources/UnitySubsystems
@@ -35,22 +35,22 @@ Initialize mono
 Mono path[0] = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001395 seconds.
+Registered in 0.001350 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 18.51 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 18.44 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.806 seconds
+- Completed reload, in  0.748 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000498 seconds.
+Registered in 0.000497 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.16 ms, found 0 plugins.
@@ -59,201 +59,25 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.632 seconds
+- Completed reload, in  0.614 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.15 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1099 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 56.7 MB.
 System memory in use after: 56.7 MB.
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1540.
-Total: 1.344400 ms (FindLiveObjects: 0.093700 ms CreateObjectMapping: 0.027100 ms MarkObjects: 1.159800 ms  DeleteObjects: 0.062900 ms)
+Total: 1.339000 ms (FindLiveObjects: 0.103900 ms CreateObjectMapping: 0.032200 ms MarkObjects: 1.142400 ms  DeleteObjects: 0.059900 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Monopoly Assets/Community Chest Back.jpg
-  artifactKey: Guid(90574aadbf0ba1e4184bfa6e596d4173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Community Chest Back.jpg using Guid(90574aadbf0ba1e4184bfa6e596d4173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d546450d1fc8babec85a0136721f217') in 0.076579 seconds
-  Import took 0.078051 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/Monopoly Assets/One Hundred Dollar Back.jpg
-  artifactKey: Guid(c12b059a347bdfb4d9fa99c34fec0f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/One Hundred Dollar Back.jpg using Guid(c12b059a347bdfb4d9fa99c34fec0f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717ffba4361b409166114b2ffb4ac6a1') in 0.012064 seconds
-  Import took 0.013550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Monopoly Assets/Ten Dollar Back.jpg
-  artifactKey: Guid(727640284775b7a4f943e85e9bbe3e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Ten Dollar Back.jpg using Guid(727640284775b7a4f943e85e9bbe3e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dcbf89ad92d67fac4b0892b6e491f63') in 0.022406 seconds
-  Import took 0.024881 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000186 seconds.
-  path: Assets/Monopoly Assets/Monopoly.FBX
-  artifactKey: Guid(b909fb88405352b4b87edce48427594c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Monopoly.FBX using Guid(b909fb88405352b4b87edce48427594c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad7744d029b1e65d3ca129af86bc564') in 0.418677 seconds
-  Import took 0.420860 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Monopoly Assets/Twenty Dollar Back.jpg
-  artifactKey: Guid(d93526b1bb9749448b26c298f774bcd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Twenty Dollar Back.jpg using Guid(d93526b1bb9749448b26c298f774bcd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c704d365ada5e60a5b46dde346dbd17') in 0.010922 seconds
-  Import took 0.012448 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Monopoly Assets/Chance Card.jpg
-  artifactKey: Guid(19a82b0ae298cbc4b88b84d244327724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Chance Card.jpg using Guid(19a82b0ae298cbc4b88b84d244327724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bff73ba3e9aa80a4b7966ce71dd69019') in 0.012790 seconds
-  Import took 0.014432 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000147 seconds.
-  path: Assets/Monopoly Assets/Monopoly Board.fw.png
-  artifactKey: Guid(21fac76daff129246a8d592b4cbf6c63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Monopoly Board.fw.png using Guid(21fac76daff129246a8d592b4cbf6c63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b579b628040939595aa4e3aa9469de') in 0.013055 seconds
-  Import took 0.014655 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/Monopoly Assets/Chance Card Back.jpg
-  artifactKey: Guid(da6f2148ebb31db4ea123a5d96e65b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Chance Card Back.jpg using Guid(da6f2148ebb31db4ea123a5d96e65b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc12353b97e80773bec364f04e47e8c') in 0.010388 seconds
-  Import took 0.011767 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000210 seconds.
-  path: Assets/Monopoly Assets/Twenty Dollar.jpg
-  artifactKey: Guid(5828c482b4be9b649b8aa39e92a4fd9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Twenty Dollar.jpg using Guid(5828c482b4be9b649b8aa39e92a4fd9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e8158945bee57b9f6d2c4c2989b5e74') in 0.011041 seconds
-  Import took 0.012529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/Monopoly Assets/Fiffy Dollar.jpg
-  artifactKey: Guid(66914e10440633c4faa5d621ea189193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Fiffy Dollar.jpg using Guid(66914e10440633c4faa5d621ea189193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3909dbb85a77d67f492d108bf919616') in 0.012169 seconds
-  Import took 0.013657 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Monopoly Assets/Community Chest.jpg
-  artifactKey: Guid(858a12239133a264da4445190c035150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Community Chest.jpg using Guid(858a12239133a264da4445190c035150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f41cd2b8fe29ee5b77c1ec4672f6f5') in 0.013882 seconds
-  Import took 0.015402 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000139 seconds.
-  path: Assets/Monopoly Assets/One Dollar Back.jpg
-  artifactKey: Guid(eb584408f4bdf4746b86986fafbebaec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/One Dollar Back.jpg using Guid(eb584408f4bdf4746b86986fafbebaec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc7eed1e7a0647b04c51b7feb32b20a') in 0.024072 seconds
-  Import took 0.025771 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000133 seconds.
-  path: Assets/Monopoly Assets/Ten Dollar.jpg
-  artifactKey: Guid(dd626d5f7bb4916419060f8978e50bce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Ten Dollar.jpg using Guid(dd626d5f7bb4916419060f8978e50bce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65edac632e49542c566cccc790ccbc2c') in 0.012916 seconds
-  Import took 0.014370 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/Monopoly Assets
-  artifactKey: Guid(b0934905f8780a440b2afe3b37fa63f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets using Guid(b0934905f8780a440b2afe3b37fa63f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc45e6d428754c459e80e708e843603b') in 0.007166 seconds
-  Import took 0.009401 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Monopoly Assets/Five Dollar Back.jpg
-  artifactKey: Guid(7e2180788dc4ec24686ede970c90dd49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Five Dollar Back.jpg using Guid(7e2180788dc4ec24686ede970c90dd49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '455b514d40b59dda6b7fda9b7d65ea89') in 0.024172 seconds
-  Import took 0.025818 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000133 seconds.
-  path: Assets/Monopoly Assets/Five Hundred Dollar.jpg
-  artifactKey: Guid(bd73788c7be843642b6f38593e4601f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Five Hundred Dollar.jpg using Guid(bd73788c7be843642b6f38593e4601f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '275ef1df12e0ce623534699ebf2e1eb6') in 0.021158 seconds
-  Import took 0.023179 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/Monopoly Assets/Park Place.jpg
-  artifactKey: Guid(03d7e607b6cf1364f8406af68b4b6617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Park Place.jpg using Guid(03d7e607b6cf1364f8406af68b4b6617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c3eaa289c2f7e8fb4aa6b69dff71a32') in 0.014193 seconds
-  Import took 0.015956 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Monopoly Assets/Monopoly Board.fw.png_specular.jpg
-  artifactKey: Guid(43f513c694a823b4dbaaf42717bb9189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Monopoly Board.fw.png_specular.jpg using Guid(43f513c694a823b4dbaaf42717bb9189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a21c7e64649e7c50565946fb456a2f93') in 0.014507 seconds
-  Import took 0.016130 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000171 seconds.
-  path: Assets/Monopoly Assets/Fiffy Dollar Back.jpg
-  artifactKey: Guid(7cdd3cb10d234074a99f75671c9aa800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Fiffy Dollar Back.jpg using Guid(7cdd3cb10d234074a99f75671c9aa800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d46c2a7f922e971ca447ec2fd066834') in 0.015720 seconds
-  Import took 0.018092 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000127 seconds.
-  path: Assets/Monopoly Assets/Five Dollar.jpg
-  artifactKey: Guid(6c6c40de5c68b8b4e9792a2b92bcb57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Five Dollar.jpg using Guid(6c6c40de5c68b8b4e9792a2b92bcb57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3131264b25c85abc897d43843da2ddf3') in 0.012268 seconds
-  Import took 0.014122 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000141 seconds.
-  path: Assets/Monopoly Assets/One Hundred Dollar.jpg
-  artifactKey: Guid(59b48201f59cba04b9b1c38f3ce5d35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/One Hundred Dollar.jpg using Guid(59b48201f59cba04b9b1c38f3ce5d35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3ca53451df29a28fe52acf7b1e17c2b') in 0.013245 seconds
-  Import took 0.015013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000112 seconds.
-  path: Assets/Monopoly Assets/Five Hundred Dollar Back.jpg
-  artifactKey: Guid(915399482eae1b242a2f3ece5e207ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/Five Hundred Dollar Back.jpg using Guid(915399482eae1b242a2f3ece5e207ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ece216a608c992eee769893b4b417a4d') in 0.011506 seconds
-  Import took 0.013228 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000108 seconds.
-  path: Assets/Monopoly Assets/One Dollar.jpg
-  artifactKey: Guid(874a85cd7852a8642a2d9aeff02a60a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Monopoly Assets/One Dollar.jpg using Guid(874a85cd7852a8642a2d9aeff02a60a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2019481a17c8ba79cb0303ac84fb8240') in 0.012164 seconds
-  Import took 0.013675 seconds .
+  path: Assets/Scenes
+  artifactKey: Guid(f7dc72b839c3e9d4aabac45b5a7bc9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(f7dc72b839c3e9d4aabac45b5a7bc9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69c28625053ebe2bb8bc81f834ea54cc') in 0.005655 seconds
+  Import took 0.006995 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
