@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.2/staging' branch; Version is '2020.2.3f1 (8ff31bc5bf5b) revision 9433883'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 18363.1379; Version 1909; 64bit' Language: 'en' Physical Memory: 32699 MB
+OS: 'Windows 10 Pro; OS build 18363.1440; Version 1909; 64bit' Language: 'en' Physical Memory: 32699 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53908
+55829
 Successfully changed project path to: C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 C:/Users/Nick/Desktop/Monopoly-Scrabble/Monopoly/Monopoly
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 18.39 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 19.03 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.3f1 (8ff31bc5bf5b)
 [Subsystems] Discovering subsystems at path C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/Resources/UnitySubsystems
@@ -35,49 +35,225 @@ Initialize mono
 Mono path[0] = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56088
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Users/Nick/Desktop/Unity/2020.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001379 seconds.
+Registered in 0.001347 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 19.42 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 18.58 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.765 seconds
+- Completed reload, in  0.748 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000502 seconds.
+Registered in 0.000491 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.16 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.613 seconds
+- Completed reload, in  0.623 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1099 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 56.7 MB.
 System memory in use after: 56.7 MB.
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1540.
-Total: 1.181800 ms (FindLiveObjects: 0.092200 ms CreateObjectMapping: 0.028200 ms MarkObjects: 1.000400 ms  DeleteObjects: 0.060400 ms)
+Total: 1.286400 ms (FindLiveObjects: 0.105800 ms CreateObjectMapping: 0.071000 ms MarkObjects: 1.049900 ms  DeleteObjects: 0.059100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881d80b4f722949bd939e636ee701243') in 0.010809 seconds
-  Import took 0.012415 seconds .
+  path: Assets/Monopoly Assets/CardPictures/RailRoad
+  artifactKey: Guid(1601bdad2226c4245947d7fad8a7341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad using Guid(1601bdad2226c4245947d7fad8a7341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9d7b2b2205072ca98c5c80db47b912d') in 0.006495 seconds
+  Import took 0.008002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000136 seconds.
+  path: Assets/Monopoly Assets/CardPictures/ChanceCardsFIN.jpg
+  artifactKey: Guid(c9f95d7386e68314d917c7436f10ee2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/ChanceCardsFIN.jpg using Guid(c9f95d7386e68314d917c7436f10ee2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e93137cdf37aa6d00480a020ebadb17d') in 0.086646 seconds
+  Import took 0.087997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Monopoly Assets/CardPictures/RailRoad/ReadingRailRoad.psd
+  artifactKey: Guid(21f540867b2f3f741acf07243976c6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad/ReadingRailRoad.psd using Guid(21f540867b2f3f741acf07243976c6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5be391e0ebcb1d23dcb89baf11aae6e0') in 0.014605 seconds
+  Import took 0.016258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 281.273317 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/PaySchoolFees.png
+  artifactKey: Guid(b00d2789034e7f34eb6b892c5a85f5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/PaySchoolFees.png using Guid(b00d2789034e7f34eb6b892c5a85f5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e8db87c3536b99ca4fdf38aeb29eba') in 0.021831 seconds
+  Import took 0.023947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/ReceiveTwentyFiveDollars.png
+  artifactKey: Guid(f59a0f26fd88bd645b4b8dc7370e9550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/ReceiveTwentyFiveDollars.png using Guid(f59a0f26fd88bd645b4b8dc7370e9550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9a267c71a7dfe428888925bf2fb2050') in 0.031099 seconds
+  Import took 0.032588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/PaySchoolFees.png
+  artifactKey: Guid(b00d2789034e7f34eb6b892c5a85f5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/PaySchoolFees.png using Guid(b00d2789034e7f34eb6b892c5a85f5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e8db87c3536b99ca4fdf38aeb29eba') in 0.008539 seconds
+  Import took 0.009918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/ReceiveTwentyFiveDollars.png
+  artifactKey: Guid(f59a0f26fd88bd645b4b8dc7370e9550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/ReceiveTwentyFiveDollars.png using Guid(f59a0f26fd88bd645b4b8dc7370e9550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9a267c71a7dfe428888925bf2fb2050') in 0.016259 seconds
+  Import took 0.017652 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/streetRepairs.png
+  artifactKey: Guid(2cc1ab62750000e49bd9f3ef52c9383d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/streetRepairs.png using Guid(2cc1ab62750000e49bd9f3ef52c9383d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24040142c0b0870220af97578f3e07ab') in 0.028029 seconds
+  Import took 0.029535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/SecondPrize.png
+  artifactKey: Guid(e45873f2c272c8946b47fb2e61afef28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/SecondPrize.png using Guid(e45873f2c272c8946b47fb2e61afef28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e82871040343d2c458436c8a7b51cfb7') in 0.019236 seconds
+  Import took 0.020755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.882182 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/AdvanceToGo.png
+  artifactKey: Guid(d7bbedb8cd2f5cb4b9e90a60e7d8869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/AdvanceToGo.png using Guid(d7bbedb8cd2f5cb4b9e90a60e7d8869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320c60972875269bb3b49b5d4bf69e26') in 0.023237 seconds
+  Import took 0.024695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001810 seconds.
+  path: Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/AdvanceToGo.png
+  artifactKey: Guid(d7bbedb8cd2f5cb4b9e90a60e7d8869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/CommunityChestCardsFinal/AdvanceToGo.png using Guid(d7bbedb8cd2f5cb4b9e90a60e7d8869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320c60972875269bb3b49b5d4bf69e26') in 0.021167 seconds
+  Import took 0.022636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 210.269288 seconds.
+  path: Assets/Monopoly Assets/CardPictures/RailRoad/ReadingRailRoad.psd
+  artifactKey: Guid(21f540867b2f3f741acf07243976c6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad/ReadingRailRoad.psd using Guid(21f540867b2f3f741acf07243976c6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdc261b198181d3292f1750f8fe708bb') in 0.025663 seconds
+  Import took 0.027748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 178.962943 seconds.
+  path: Assets/Monopoly Assets/CardPictures/RailRoad/PenRailRoad.psd
+  artifactKey: Guid(2388781edb6b5bd41b939985d42ade3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad/PenRailRoad.psd using Guid(2388781edb6b5bd41b939985d42ade3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06933b01d40dd40bc09383f690fc55ac') in 0.019624 seconds
+  Import took 0.021367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 83.219033 seconds.
+  path: Assets/Monopoly Assets/CardPictures/RailRoad/BandORailRoad.psd
+  artifactKey: Guid(df7f61e36650a2840bfba74ee2ce1215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad/BandORailRoad.psd using Guid(df7f61e36650a2840bfba74ee2ce1215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90287a58b54d62242ec25024066b14c4') in 0.017405 seconds
+  Import took 0.019359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 94.365297 seconds.
+  path: Assets/Monopoly Assets/CardPictures/RailRoad/ShortLine.psd
+  artifactKey: Guid(155a71aadb8b4fc408db615efb6baa36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/RailRoad/ShortLine.psd using Guid(155a71aadb8b4fc408db615efb6baa36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dbea3d1cc9730bc90ee4c35b1a5ca6b') in 0.017993 seconds
+  Import took 0.019637 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 655.044821 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties
+  artifactKey: Guid(57ff11e4d8b82524eaa9b81037671814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties using Guid(57ff11e4d8b82524eaa9b81037671814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e535e494bf40a41632006e3a82f2e3b') in 0.005775 seconds
+  Import took 0.007481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.816878 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/StateAvenue.psd
+  artifactKey: Guid(faa8d93e0b4f66041b0b48266f90eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/StateAvenue.psd using Guid(faa8d93e0b4f66041b0b48266f90eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0a53fa17a06451bb9e3c23d555be0f') in 0.013555 seconds
+  Import took 0.015179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd
+  artifactKey: Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd using Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12cb9bc3411fd497d4c1b6f1c3da4bb9') in 0.012901 seconds
+  Import took 0.014265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/VirginiaAvenue.psd
+  artifactKey: Guid(e5900984f809e7b499563c7d6c043161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/VirginiaAvenue.psd using Guid(e5900984f809e7b499563c7d6c043161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c8b0bc009344d53e8e74bca391a44bc') in 0.022918 seconds
+  Import took 0.024377 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd
+  artifactKey: Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd using Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12cb9bc3411fd497d4c1b6f1c3da4bb9') in 0.008244 seconds
+  Import took 0.009685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.913132 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd
+  artifactKey: Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/StCharlesPlace.psd using Guid(48d836b77c41f7f4baddcdcd11da07c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4281799e0ffdeda86e034a12e58ba4c9') in 0.027713 seconds
+  Import took 0.029386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 146.082836 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/StatesAvenue.psd
+  artifactKey: Guid(7f333f02cd7fe694d8bff2ab06ca686f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/StatesAvenue.psd using Guid(7f333f02cd7fe694d8bff2ab06ca686f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '291cbfef2e779aa657713cd68f7a6dd3') in 0.028619 seconds
+  Import took 0.030210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/Monopoly Assets/CardPictures/Properties/VirginiaAvenue.psd
+  artifactKey: Guid(e5900984f809e7b499563c7d6c043161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monopoly Assets/CardPictures/Properties/VirginiaAvenue.psd using Guid(e5900984f809e7b499563c7d6c043161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fa79ea03c593f6a5ec35fbe83f91756') in 0.020618 seconds
+  Import took 0.022073 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
