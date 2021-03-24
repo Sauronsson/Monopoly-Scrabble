@@ -17,17 +17,29 @@ public class SteppingStones : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isMoving)
         {
-            steps = Random.Range(1,8);
-            steps1 = Random.Range(1,8);
+            steps = Random.Range(1,7);
+            steps1 = Random.Range(1,7);
             Debug.Log("Dice Rolled " + steps);
             Debug.Log("Dice Rolled " + steps1);
+            
             steps += steps1;
-            if(routePosition+steps < currentRoute.childNodeList.Count){
+            if(steps == 2)
+            {
+                Debug.Log("SNAKE EYES GO TO JAIL" + steps);
+            }
+
+            StartCoroutine(Move());
+
+
+
+            /*if(routePosition+steps < currentRoute.childNodeList.Count){
                 StartCoroutine(Move());
 
             }else{
                 Debug.Log("Rolled Number is to high: " + steps);
-            }
+                //Insert something here to repeat the route
+                
+            }*/
 
 
         }
@@ -45,17 +57,23 @@ public class SteppingStones : MonoBehaviour
 
         while(steps>0)
         {
-            Vector3 nextPos = currentRoute.childNodeList[routePosition + 1].position;
+
+            routePosition++;
+            routePosition %= currentRoute.childNodeList.Count;
+
+
+
+            Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
             while(MoveToNextNode(nextPos)){yield return null;}
 
             yield return new WaitForSeconds(0.1f);
             steps--;
-            routePosition++;
+            //routePosition++;
         }
         isMoving = false;
 
     }
     bool MoveToNextNode(Vector3 goal){
-        return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 2f * Time.deltaTime));
+        return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 4f * Time.deltaTime));
     }
 }

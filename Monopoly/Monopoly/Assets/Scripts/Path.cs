@@ -21,8 +21,11 @@ public class Path : MonoBehaviour
             {
                 Vector3 prevPos = childNodeList[i-1].position;
                 Gizmos.DrawLine(prevPos, currentPos);
+
             }
+               
         }
+        //Gizmos.DrawLine(childNodeList[40].position, childNodeList[0].position);
 
 
     }
