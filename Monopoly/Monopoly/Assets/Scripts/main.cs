@@ -5,11 +5,12 @@ using UnityEngine;
 public class main : MonoBehaviour
 {
 
-    public Transform player1;
-    public Transform player2;
-    public Transform player3;
-    public Transform player4;
-    private Transform[] playerArray;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    private GameObject[] playerArray;
+    private SteppingStones[] playerMovement;
 
     //To keep track of which part of the turn you're on
     int turnTracker = 0;
@@ -19,7 +20,14 @@ public class main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerArray = new Transform[] {player1, player2, player3, player4};
+        playerArray = new GameObject[] {player1, player2, player3, player4};
+
+        //get movement scripts
+        SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
+        SteppingStones p2MoveScript = player2.GetComponent<SteppingStones>() as SteppingStones;
+        SteppingStones p3MoveScript = player3.GetComponent<SteppingStones>() as SteppingStones;
+        SteppingStones p4MoveScript = player4.GetComponent<SteppingStones>() as SteppingStones;
+        playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
     }
 
     // Update is called once per frame
@@ -32,8 +40,13 @@ public class main : MonoBehaviour
             
             //Move player character to next location. Keep moving until no doubles.
             case 1:
+                if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving)
+                {
+                    //SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
+                    playerMovement[currentPlayer].roll();
+                    turnTracker++;
+                }
                 break;
-                
 
             //move to next player, reset turn tracker
             default:

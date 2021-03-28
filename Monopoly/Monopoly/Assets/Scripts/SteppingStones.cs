@@ -11,37 +11,48 @@ public class SteppingStones : MonoBehaviour
     public int steps;
     public int steps1;
 
-    bool isMoving;
+    public bool isMoving;
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isMoving)
         {
-            steps = Random.Range(1,7);
-            steps1 = Random.Range(1,7);
-            Debug.Log("Dice Rolled " + steps);
-            Debug.Log("Dice Rolled " + steps1);
-            
-            steps += steps1;
-            if(steps == 2)
-            {
-                Debug.Log("SNAKE EYES GO TO JAIL" + steps);
-            }
 
+        }
+
+
+
+        /*if(routePosition+steps < currentRoute.childNodeList.Count){
             StartCoroutine(Move());
 
+        }else{
+            Debug.Log("Rolled Number is to high: " + steps);
+            //Insert something here to repeat the route
+
+        }*/
 
 
-            /*if(routePosition+steps < currentRoute.childNodeList.Count){
-                StartCoroutine(Move());
 
-            }else{
-                Debug.Log("Rolled Number is to high: " + steps);
-                //Insert something here to repeat the route
-                
-            }*/
+    }
 
+    public bool roll()
+    {
+        steps = Random.Range(1, 7);
+        steps1 = Random.Range(1, 7);
+        Debug.Log("Dice Rolled " + steps);
+        Debug.Log("Dice Rolled " + steps1);
 
+        steps += steps1;
+        if (steps == steps1)
+        {
+            Debug.Log("SNAKE EYES GO TO JAIL" + steps);
+            StartCoroutine(Move());
+            return true;
+        }
+        else
+        {
+            StartCoroutine(Move());
+            return false;
         }
 
     }
@@ -62,11 +73,11 @@ public class SteppingStones : MonoBehaviour
             routePosition %= currentRoute.childNodeList.Count;
 
 
-
+            Debug.Log(currentRoute);
             Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
             while(MoveToNextNode(nextPos)){yield return null;}
 
-            yield return new WaitForSeconds(0.1f);
+            //yield return new WaitForSeconds(0.1f);
             steps--;
             //routePosition++;
         }
