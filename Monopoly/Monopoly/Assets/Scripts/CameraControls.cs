@@ -6,8 +6,8 @@ public class CameraControls : MonoBehaviour
 {
     
 
-    private Vector3 MAX = new Vector3((float)2.5, 0, (float)10);
-    private Vector3 MIN = new Vector3((float)-2.5, 0, (float)-10);
+    private Vector3 MAX = new Vector3((float)5, 0, (float)15);
+    private Vector3 MIN = new Vector3((float)-5, 0, (float)-15);
     float mainSpeed = 100.0f;
     private float totalRun = 1.0f;
 
