@@ -11,6 +11,7 @@ public class main : MonoBehaviour
     public GameObject player4;
     private GameObject[] playerArray;
     private SteppingStones[] playerMovement;
+    private int sameRollCounter = 0;
 
     //To keep track of which part of the turn you're on
     int turnTracker = 0;
@@ -38,13 +39,19 @@ public class main : MonoBehaviour
                 turnTracker++;
                 break;
             
-            //Move player character to next location. Keep moving until no doubles.
+            //Move player character to next location. Keep moving until no doubles. on 3 doubles send to jail
             case 1:
-                if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving)
+                if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving )
                 {
                     //SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
                     playerMovement[currentPlayer].roll();
-                    turnTracker++;
+                    //go to next phase of turn once player doesn't roll a double
+                    if (playerMovement[currentPlayer].permsteps1 != playerMovement[currentPlayer].permsteps2)
+                    {
+                        turnTracker++;
+                    } else {
+                        sameRollCounter++;
+                    }
                 }
                 break;
 
@@ -56,6 +63,7 @@ public class main : MonoBehaviour
                     currentPlayer = currentPlayer + 1;
                 }
                 turnTracker = 0;
+                sameRollCounter = 0;
                 break;
         }
     }

@@ -8,8 +8,10 @@ public class SteppingStones : MonoBehaviour
 
     int routePosition;
 
-    public int steps;
-    public int steps1;
+    private int steps;
+    private int steps1;
+    public int permsteps1 = 0;
+    public int permsteps2 = 0;
 
     public bool isMoving;
 
@@ -42,6 +44,9 @@ public class SteppingStones : MonoBehaviour
         Debug.Log("Dice Rolled " + steps);
         Debug.Log("Dice Rolled " + steps1);
 
+        //stored for use in turn manager
+        permsteps1 = steps;
+        permsteps2 = steps1;
         steps += steps1;
         if (steps == steps1)
         {
