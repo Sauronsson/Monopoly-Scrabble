@@ -21,7 +21,7 @@ public class main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerArray = new GameObject[] {player1, player2, player3, player4};
+        playerArray = new GameObject[] { player1, player2, player3, player4 };
 
         //get movement scripts
         SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
@@ -35,13 +35,15 @@ public class main : MonoBehaviour
     void Update()
     {
         switch (turnTracker) {
+
+            //beginning function, tbd on use
             case 0:
                 turnTracker++;
                 break;
-            
+
             //Move player character to next location. Keep moving until no doubles. on 3 doubles send to jail
             case 1:
-                if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving )
+                if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving)
                 {
                     //SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
                     playerMovement[currentPlayer].roll();
@@ -50,8 +52,32 @@ public class main : MonoBehaviour
                     {
                         turnTracker++;
                     } else {
-                        sameRollCounter++;
+                        //rolls snake eyes, go to jail
+                        if (playerMovement[currentPlayer].permsteps1 == 1)
+                        {
+                            goToJail(currentPlayer);
+                            turnTracker++;
+                        }
+                        //rolls doubles 3 times, go to jail
+                        else if (sameRollCounter == 2)
+                        {
+                            goToJail(currentPlayer);
+                            turnTracker++;
+                        }
+                        else
+                        {
+                            sameRollCounter++;
+                        }
                     }
+                }
+                break;
+
+            //Do whatever board says
+            case 3:
+                if (!playerMovement[currentPlayer].isMoving)
+                {
+                    determineBoardEffect();
+                    turnTracker++;
                 }
                 break;
 
@@ -67,4 +93,21 @@ public class main : MonoBehaviour
                 break;
         }
     }
+
+    private bool goToJail(int currentPlayer)
+    {
+        playerMovement[currentPlayer].goToJail();
+        return true;
+    }
+
+    private void determineBoardEffect(){
+        //activate effects from landing on tile
+        switch (playerMovement[currentPlayer].routePosition)
+        {
+            case 31:
+                goToJail(currentPlayer);
+                break;
+        }
+    }
 }
+

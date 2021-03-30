@@ -6,7 +6,10 @@ public class SteppingStones : MonoBehaviour
 {
     public Path currentRoute;
 
-    int routePosition;
+    public int routePosition = 0;
+    private int jailPosition = 11;
+    private int maxPosition;
+
 
     private int steps;
     private int steps1;
@@ -15,28 +18,12 @@ public class SteppingStones : MonoBehaviour
 
     public bool isMoving;
 
-    void Update()
+    void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isMoving)
-        {
-
-        }
-
-
-
-        /*if(routePosition+steps < currentRoute.childNodeList.Count){
-            StartCoroutine(Move());
-
-        }else{
-            Debug.Log("Rolled Number is to high: " + steps);
-            //Insert something here to repeat the route
-
-        }*/
-
-
-
+        maxPosition = currentRoute.childNodeList.Count-1;
     }
 
+    //Commands to determine what position to go to
     public bool roll()
     {
         steps = Random.Range(1, 7);
@@ -50,46 +37,126 @@ public class SteppingStones : MonoBehaviour
         steps += steps1;
         if (steps == steps1)
         {
-            Debug.Log("SNAKE EYES GO TO JAIL" + steps);
-            StartCoroutine(Move());
+            StartCoroutine(MoveForwards());
             return true;
         }
         else
         {
-            StartCoroutine(Move());
+            StartCoroutine(MoveForwards());
             return false;
         }
 
     }
 
+    
 
-    IEnumerator Move()
+    public bool goToJail()
     {
-        if(isMoving)
+        steps = 1;
+        StartCoroutine(MoveSpecificPoint(jailPosition));
+        return true;
+    }
+
+    public bool goBackwards(int stepCount)
+    {
+        steps = stepCount;
+        StartCoroutine(MoveBackwards());
+        return true;
+    }
+
+    //Movers, only accessed by this class
+    IEnumerator MoveSpecificPoint(int newRoutePosition)
+    {
+        if (isMoving)
         {
             yield break;
         }
         isMoving = true;
 
-        while(steps>0)
+        while (steps > 0)
         {
 
-            routePosition++;
-            routePosition %= currentRoute.childNodeList.Count;
+            routePosition = newRoutePosition;
 
-
-            Debug.Log(currentRoute);
             Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
-            while(MoveToNextNode(nextPos)){yield return null;}
+            while (MoveToNextNode(nextPos)) { yield return null; }
 
             //yield return new WaitForSeconds(0.1f);
             steps--;
             //routePosition++;
         }
         isMoving = false;
-
     }
-    bool MoveToNextNode(Vector3 goal){
+
+    IEnumerator MoveForwards()
+    {
+        if (isMoving)
+        {
+            yield break;
+        }
+        isMoving = true;
+
+        while (steps > 0)
+        {
+
+            routePosition++;
+            routePosition %= currentRoute.childNodeList.Count;
+
+            if (currentRoute.childNodeList[routePosition].name == "Jail")
+            {
+                routePosition++;
+            }
+
+            Debug.Log(currentRoute);
+            Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
+            while (MoveToNextNode(nextPos)) { yield return null; }
+
+            //yield return new WaitForSeconds(0.1f);
+            steps--;
+            //routePosition++;
+        }
+        isMoving = false;
+    }
+
+    IEnumerator MoveBackwards()
+    {
+        if (isMoving)
+        {
+            yield break;
+        }
+        isMoving = true;
+
+        while (steps > 0)
+        {
+            if (routePosition == 0)
+            {
+                routePosition = maxPosition;
+            }
+            else
+            {
+                routePosition--;
+            }
+
+            if (currentRoute.childNodeList[routePosition].name == "Jail")
+            {
+                routePosition--;
+            }
+
+            Debug.Log(currentRoute);
+            Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
+            while (MoveToNextNode(nextPos)) { yield return null; }
+
+            //yield return new WaitForSeconds(0.1f);
+            steps--;
+            //routePosition++;
+        }
+        isMoving = false;
+    }
+
+    //Movement Function
+    bool MoveToNextNode(Vector3 goal)
+    {
         return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 4f * Time.deltaTime));
     }
+
 }
