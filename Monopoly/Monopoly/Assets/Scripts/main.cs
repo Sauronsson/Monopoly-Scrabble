@@ -50,6 +50,7 @@ public class main : MonoBehaviour
                     //go to next phase of turn once player doesn't roll a double
                     if (playerMovement[currentPlayer].permsteps1 != playerMovement[currentPlayer].permsteps2)
                     {
+                        playerMovement[currentPlayer].goForwards();
                         turnTracker++;
                     } else {
                         //rolls snake eyes, go to jail
@@ -66,6 +67,7 @@ public class main : MonoBehaviour
                         }
                         else
                         {
+                            playerMovement[currentPlayer].goForwards();
                             sameRollCounter++;
                         }
                     }

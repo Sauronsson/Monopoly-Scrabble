@@ -28,30 +28,27 @@ public class SteppingStones : MonoBehaviour
     {
         steps = Random.Range(1, 7);
         steps1 = Random.Range(1, 7);
-        Debug.Log("Dice Rolled " + steps);
-        Debug.Log("Dice Rolled " + steps1);
+        Debug.Log("Dice Rolled 1: " + steps + "\tDice Rolled 2: " + steps1);
 
         //stored for use in turn manager
         permsteps1 = steps;
         permsteps2 = steps1;
         steps += steps1;
-        if (steps == steps1)
-        {
-            StartCoroutine(MoveForwards());
-            return true;
-        }
-        else
-        {
-            StartCoroutine(MoveForwards());
-            return false;
-        }
-
+        return true;
     }
 
-    
+    //based off roll function, need to use roll before you use this function
+    public bool goForwards()
+    {
+        StartCoroutine(MoveForwards());
+        return true;
+    }
 
     public bool goToJail()
     {
+
+        steps = 0;
+        isMoving = false;
         steps = 1;
         StartCoroutine(MoveSpecificPoint(jailPosition));
         return true;
@@ -78,7 +75,7 @@ public class SteppingStones : MonoBehaviour
 
             routePosition = newRoutePosition;
 
-            Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
+            Vector3 nextPos = currentRoute.childNodeList[newRoutePosition].position;
             while (MoveToNextNode(nextPos)) { yield return null; }
 
             //yield return new WaitForSeconds(0.1f);
@@ -107,7 +104,6 @@ public class SteppingStones : MonoBehaviour
                 routePosition++;
             }
 
-            Debug.Log(currentRoute);
             Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
             while (MoveToNextNode(nextPos)) { yield return null; }
 
