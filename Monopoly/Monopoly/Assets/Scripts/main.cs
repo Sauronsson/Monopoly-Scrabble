@@ -9,9 +9,15 @@ public class main : MonoBehaviour
     public GameObject player2;
     public GameObject player3;
     public GameObject player4;
+    private int amountOfPlayers = 1;
     private GameObject[] playerArray;
     private SteppingStones[] playerMovement;
+    private PlayerData[] playerData;
     private int sameRollCounter = 0;
+
+    //data for main to keep track of information.
+    private int startingPosition;
+
 
     //To keep track of which part of the turn you're on
     int turnTracker = 0;
@@ -28,7 +34,14 @@ public class main : MonoBehaviour
         SteppingStones p2MoveScript = player2.GetComponent<SteppingStones>() as SteppingStones;
         SteppingStones p3MoveScript = player3.GetComponent<SteppingStones>() as SteppingStones;
         SteppingStones p4MoveScript = player4.GetComponent<SteppingStones>() as SteppingStones;
+        PlayerData p1DataScript = player1.GetComponent<PlayerData>() as PlayerData;
+        PlayerData p2DataScript = player2.GetComponent<PlayerData>() as PlayerData;
+        PlayerData p3DataScript = player3.GetComponent<PlayerData>() as PlayerData;
+        PlayerData p4DataScript = player4.GetComponent<PlayerData>() as PlayerData;
+
+        //Player Specific Scripts
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
+        playerData = new PlayerData[] { p1DataScript, p2DataScript, p3DataScript, p4DataScript };
     }
 
     // Update is called once per frame
@@ -45,9 +58,14 @@ public class main : MonoBehaviour
             case 1:
                 if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving)
                 {
-                    //SteppingStones p1MoveScript = player1.GetComponent<SteppingStones>() as SteppingStones;
+                    //Starting Movement information
                     playerMovement[currentPlayer].roll();
-                    //go to next phase of turn once player doesn't roll a double
+                    if (sameRollCounter == 0)
+                    {
+                        startingPosition = playerMovement[currentPlayer].routePosition;
+                    }
+
+                    //Move Object based off roll
                     if (playerMovement[currentPlayer].permsteps1 != playerMovement[currentPlayer].permsteps2)
                     {
                         playerMovement[currentPlayer].goForwards();
@@ -75,9 +93,15 @@ public class main : MonoBehaviour
                 break;
 
             //Do whatever board says
-            case 3:
+            case 2:
                 if (!playerMovement[currentPlayer].isMoving)
                 {
+                    //update cash from previous turn
+                    if (playerData[currentPlayer].passedGo)
+                    {
+                        updateCash(currentPlayer, 200);
+                        playerData[currentPlayer].passedGo = false;
+                    }
                     determineBoardEffect();
                     turnTracker++;
                 }
@@ -85,7 +109,7 @@ public class main : MonoBehaviour
 
             //move to next player, reset turn tracker
             default:
-                if (currentPlayer == 3) {
+                if (currentPlayer+1 == amountOfPlayers) {
                     currentPlayer = 0;
                 } else {
                     currentPlayer = currentPlayer + 1;
@@ -96,9 +120,16 @@ public class main : MonoBehaviour
         }
     }
 
+    //helper method, to ensure that additional data files are changed to reflect jail.
     private bool goToJail(int currentPlayer)
     {
         playerMovement[currentPlayer].goToJail();
+        return true;
+    }
+
+    //helper method, to take care of extra effects from changing cash, like bankruptcy
+    private bool updateCash(int currentPlayer, int amount) {
+        playerData[currentPlayer].updateCash(amount);
         return true;
     }
 
@@ -106,8 +137,25 @@ public class main : MonoBehaviour
         //activate effects from landing on tile
         switch (playerMovement[currentPlayer].routePosition)
         {
-            case 31:
+            case 0: //GO
+                break;
+
+            case 4: //INCOME TAX
+                updateCash(currentPlayer, -200);
+                break;
+
+            case 10: //VISITING JAIL
+                break;
+
+            case 21: //FREE PARKING
+                break;
+
+            case 31: //GO TO JAIL
                 goToJail(currentPlayer);
+                break;
+
+            case 39: //LUXURY TAX
+                updateCash(currentPlayer, -100);
                 break;
         }
     }

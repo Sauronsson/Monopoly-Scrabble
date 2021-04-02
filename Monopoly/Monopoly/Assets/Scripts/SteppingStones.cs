@@ -9,7 +9,7 @@ public class SteppingStones : MonoBehaviour
     public int routePosition = 0;
     private int jailPosition = 11;
     private int maxPosition;
-
+    private int goPosition = 0;
 
     private int steps;
     private int steps1;
@@ -17,6 +17,7 @@ public class SteppingStones : MonoBehaviour
     public int permsteps2 = 0;
 
     public bool isMoving;
+
 
     void Start()
     {
@@ -99,9 +100,17 @@ public class SteppingStones : MonoBehaviour
             routePosition++;
             routePosition %= currentRoute.childNodeList.Count;
 
+            //ensure that the actual jail position on the board isn't counted as a viable position
             if (currentRoute.childNodeList[routePosition].name == "Jail")
             {
                 routePosition++;
+            }
+
+            //ensure we update cash after passing go
+            if (routePosition == goPosition)
+            {
+                PlayerData currentPlayerData = this.gameObject.GetComponent<PlayerData>() as PlayerData;
+                currentPlayerData.passedGo = true;
             }
 
             Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
