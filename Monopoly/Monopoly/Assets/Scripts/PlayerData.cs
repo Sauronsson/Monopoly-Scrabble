@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    //Player Data
+    public int currentCash;
+    
+    //Game Data
+    public bool    inJail = false;
+    public bool    passedGo = false;
+    public int     jailCounter = 0;
+    public int     currentOwedCash = 0;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentCash = 1500;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //returns whether or not this succeeded. Main reason for failure is if Player goes to 0 or below.
+    public bool updateCash(int cashToAdd) {
+        currentCash += cashToAdd;
+        Debug.Log(currentCash);
+        if (cashToAdd > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
+
+
+
+
 }
