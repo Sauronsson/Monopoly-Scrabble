@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommunityCard : MonoBehaviour
+public class CommunityCard : Card
 {
     // Start is called before the first frame update
     void Start()

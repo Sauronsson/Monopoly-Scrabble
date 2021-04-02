@@ -4,10 +4,32 @@ using UnityEngine;
 
 public class CardDeck : MonoBehaviour
 {
+    
+    //private Transform[] childNodeList;
+    private Card[] cardList;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+ 
+/*
+The problem is you're using GetComponent method but GameObject is not a component. On the other hand, transform contains all the children. So, in order to get children Transforms, you can use this:
+
+foreach (Transform child in transform)
+
+And in order to reach the GameObject, you can do this:
+
+child.gameObject
+*/
+
+        Transform[] childNodeList;
+        childNodeList = GetComponentsInChildren<Transform>();
+        cardList = new Card[childNodeList.Length];
+        for(int i = 0; i < childNodeList.Length; i++){
+            if (childNodeList[i] != this.transform){
+                cardList[i] = childNodeList[i].gameObject.GetComponent<Card>();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -15,4 +37,30 @@ public class CardDeck : MonoBehaviour
     {
         
     }
+
+    public void shuffle() {
+        //get randoms for cards
+        float[] randomRef = new float[cardList.Length];
+
+        for(int i = 0; i < randomRef.Length; i++) 
+        {
+            randomRef[i] = Random.Range(0, 100);
+        }
+
+        //sort list by new randoms
+        for (int i = 0; i < cardList.Length; i++) {
+            int maxPoint = i;
+            float max = 0;
+            for (int j = 0; j < cardList.Length; j++) {
+                if (randomRef[i] > max){
+                    maxPoint = j;
+                    max = randomRef[j];
+                }
+            }
+            Card temp = cardList[i];
+            cardList[i] = cardList[maxPoint];
+            cardList[maxPoint] = temp;
+        }
+    }
+
 }
