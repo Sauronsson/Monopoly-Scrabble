@@ -6,6 +6,7 @@ public class Path : MonoBehaviour
 {
     Transform[] childObject;
     public List<Transform> childNodeList = new List<Transform>();
+    public int size = 0;
 
 
     void OnDrawGizmos()
@@ -27,7 +28,6 @@ public class Path : MonoBehaviour
         }
         //Gizmos.DrawLine(childNodeList[40].position, childNodeList[0].position);
 
-
     }
 
     void FillNodes()
@@ -40,7 +40,33 @@ public class Path : MonoBehaviour
             if(child != this.transform)
             {
                 childNodeList.Add(child);
+                size++;
             }
         }
     }
+
+    public positionData getPositionData(int i)
+    {
+        if (i < size)
+        {
+            return childNodeList[i].gameObject.GetComponent<positionData>() as positionData;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public GameObject getPositionObject(int i)
+    {
+        if (i < size)
+        {
+            return childNodeList[i].gameObject;
+        }
+        else
+        {
+            return null;
+        }
+    }
+  
 }

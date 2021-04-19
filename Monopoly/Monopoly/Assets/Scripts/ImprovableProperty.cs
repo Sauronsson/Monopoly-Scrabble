@@ -17,6 +17,7 @@ public class ImprovableProperty : Card
     public int houseCost;
     public int hotelCost;
     public int[] rents;
+    public PlayerData currentOwner = null;
 
 
 

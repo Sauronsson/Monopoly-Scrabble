@@ -10,7 +10,9 @@ public class main : MonoBehaviour
     public GameObject player3;
     public GameObject player4;
     public GameObject UIMainText;
+    public GameObject positionsObject;
     private UIupdate textUpdater;
+    private Path positions;
     private int amountOfPlayers = 4;
     private GameObject[] playerArray;
     private SteppingStones[] playerMovement;
@@ -43,6 +45,7 @@ public class main : MonoBehaviour
         PlayerData p3DataScript = player3.GetComponent<PlayerData>() as PlayerData;
         PlayerData p4DataScript = player4.GetComponent<PlayerData>() as PlayerData;
         textUpdater = UIMainText.GetComponent<UIupdate>() as UIupdate;
+        positions = positionsObject.GetComponent<Path>() as Path;
 
         //Player Specific Scripts
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
@@ -122,14 +125,17 @@ public class main : MonoBehaviour
 
             //Used for if we need to wait for the player to press space (usually text dialog)
             case 50000:
-                //if (Time.timeScale == 1)
-                //{
-                //    Time.timeScale = 0;
-                //} else 
                 if (Input.GetKeyDown(KeyCode.Space)){
                     //move to next part of turn after space...
-                    Time.timeScale = 1;
                     turnTracker = prevTurnTracker+1;
+                }
+                break;
+
+            //Used to wait for space, continue from same point. Great for user errors.
+            case 50001:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    turnTracker = prevTurnTracker;
                 }
                 break;
 
@@ -193,7 +199,7 @@ public class main : MonoBehaviour
             case 31: //GO TO JAIL
                 updateText("You're going to jail, feller");
                 goToJail(currentPlayer);
-                turnTracker++;
+                waitForSpace();
                 break;
 
             case 39: //LUXURY TAX
@@ -218,7 +224,8 @@ public class main : MonoBehaviour
                 break;
 
             default:
-                updateText("Property Spot");
+                ImprovableProperty property = positions.getPositionData(playerMovement[currentPlayer].routePosition).positionObject.GetComponent<ImprovableProperty>() as ImprovableProperty;
+                updateText("Landed on: " + property.name + " (space)");
                 waitForSpace();
                 break;
         }
@@ -229,6 +236,13 @@ public class main : MonoBehaviour
         //Uses case 50000 to wait
         prevTurnTracker = turnTracker;
         turnTracker = 50000;
+    }
+
+    void waitForSpaceReturnHere()
+    {
+        //Uses case 50001
+        prevTurnTracker = turnTracker;
+        turnTracker = 50001;
     }
 }
 
