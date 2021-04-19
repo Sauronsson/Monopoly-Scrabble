@@ -9,11 +9,14 @@ public class main : MonoBehaviour
     public GameObject player2;
     public GameObject player3;
     public GameObject player4;
-    private int amountOfPlayers = 1;
+    public GameObject UIMainText;
+    private UIupdate textUpdater;
+    private int amountOfPlayers = 4;
     private GameObject[] playerArray;
     private SteppingStones[] playerMovement;
     private PlayerData[] playerData;
     private int sameRollCounter = 0;
+    
 
     //data for main to keep track of information.
     private int startingPosition;

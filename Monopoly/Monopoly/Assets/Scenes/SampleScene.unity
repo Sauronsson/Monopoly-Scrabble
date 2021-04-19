@@ -304,6 +304,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: St James Place
+  position: 17
+  cost: 180
+  generalRent: 14
+  houseRent1: 70
+  houseRent2: 200
+  houseRent3: 550
+  houseRent4: 750
+  hotelRent: 950
+  mortgageValue: 90
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &136347588
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +360,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Illinois Ave
+  position: 25
+  cost: 240
+  generalRent: 20
+  houseRent1: 100
+  houseRent2: 300
+  houseRent3: 750
+  houseRent4: 925
+  hotelRent: 1100
+  mortgageValue: 120
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &164011151
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +787,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Baltic Ave
+  position: 3
+  cost: 60
+  generalRent: 4
+  houseRent1: 20
+  houseRent2: 60
+  houseRent3: 180
+  houseRent4: 320
+  hotelRent: 450
+  mortgageValue: 30
+  houseCost: 50
+  hotelCost: 50
+  rents: 
 --- !u!1 &316519180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1125,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Marvin Gardens
+  position: 30
+  cost: 280
+  generalRent: 24
+  houseRent1: 120
+  houseRent2: 360
+  houseRent3: 850
+  houseRent4: 1025
+  hotelRent: 1200
+  mortgageValue: 140
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &419949208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1552,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: States ave
+  position: 14
+  cost: 140
+  generalRent: 10
+  houseRent1: 50
+  houseRent2: 150
+  houseRent3: 450
+  houseRent4: 625
+  hotelRent: 750
+  mortgageValue: 70
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &513709022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1608,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: New York Ave
+  position: 20
+  cost: 200
+  generalRent: 16
+  houseRent1: 80
+  houseRent2: 220
+  houseRent3: 600
+  houseRent4: 800
+  hotelRent: 1000
+  mortgageValue: 100
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &558081670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +2044,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Mediterranean Avenue
+  position: 1
+  cost: 60
+  generalRent: 2
+  houseRent1: 10
+  houseRent2: 30
+  houseRent3: 90
+  houseRent4: 160
+  hotelRent: 250
+  mortgageValue: 30
+  houseCost: 50
+  hotelCost: 50
+  rents: 
 --- !u!1 &617514193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2100,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Virginia Ave
+  position: 15
+  cost: 160
+  generalRent: 12
+  houseRent1: 60
+  houseRent2: 180
+  houseRent3: 500
+  houseRent4: 700
+  hotelRent: 900
+  mortgageValue: 80
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &618103645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2251,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Oriental Ave.
+  position: 6
+  cost: 100
+  generalRent: 6
+  houseRent1: 30
+  houseRent2: 90
+  houseRent3: 270
+  houseRent4: 400
+  hotelRent: 550
+  mortgageValue: 50
+  houseCost: 50
+  hotelCost: 50
+  rents: 
 --- !u!1 &641120198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2780,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: WaterWorks
+  position: 29
+  cost: 150
+  rent: 20
+  rent2: 50
+  rent3: 0
+  rent4: 0
+  mortgageValue: 75
 --- !u!1 &817336119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,6 +2831,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Electric Company
+  position: 13
+  cost: 150
+  rent: 20
+  rent2: 50
+  rent3: 0
+  rent4: 0
+  mortgageValue: 75
 --- !u!1 &839911077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,6 +3158,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: St Charles Place
+  position: 12
+  cost: 140
+  generalRent: 10
+  houseRent1: 50
+  houseRent2: 150
+  houseRent3: 450
+  houseRent4: 625
+  hotelRent: 750
+  mortgageValue: 70
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,6 +3310,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Tennessee Ave
+  position: 19
+  cost: 180
+  generalRent: 14
+  houseRent1: 70
+  houseRent2: 200
+  houseRent3: 550
+  houseRent4: 750
+  hotelRent: 950
+  mortgageValue: 90
+  houseCost: 100
+  hotelCost: 100
+  rents: 
 --- !u!1 &982784969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3409,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: North Carolina Ave
+  position: 33
+  cost: 300
+  generalRent: 26
+  houseRent1: 130
+  houseRent2: 390
+  houseRent3: 900
+  houseRent4: 1100
+  hotelRent: 1275
+  mortgageValue: 150
+  houseCost: 200
+  hotelCost: 200
+  rents: 
 --- !u!1 &1018694010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Reading Railroad
+  position: 5
+  cost: 200
+  rent: 25
+  rent2: 50
+  rent3: 100
+  rent4: 200
+  mortgageValue: 100
 --- !u!1 &1120573749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,6 +3740,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Indiana Ave
+  position: 24
+  cost: 220
+  generalRent: 18
+  houseRent1: 90
+  houseRent2: 250
+  houseRent3: 700
+  houseRent4: 875
+  hotelRent: 1050
+  mortgageValue: 110
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &1136430250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,6 +3830,7 @@ RectTransform:
   - {fileID: 1667689234}
   - {fileID: 1822402036}
   - {fileID: 1808130790}
+  - {fileID: 1515399482}
   m_Father: {fileID: 2063100821}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3769,6 +3963,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Vermont Ave
+  position: 8
+  cost: 100
+  generalRent: 6
+  houseRent1: 30
+  houseRent2: 90
+  houseRent3: 270
+  houseRent4: 400
+  hotelRent: 550
+  mortgageValue: 50
+  houseCost: 50
+  hotelCost: 50
+  rents: 
 --- !u!1 &1194460839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,6 +4243,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: B & O Railroad
+  position: 26
+  cost: 200
+  rent: 25
+  rent2: 50
+  rent3: 100
+  rent4: 200
+  mortgageValue: 100
 --- !u!1 &1268404066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,6 +4557,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Ventnor Ave
+  position: 28
+  cost: 260
+  generalRent: 22
+  houseRent1: 110
+  houseRent2: 330
+  houseRent3: 800
+  houseRent4: 975
+  hotelRent: 1150
+  mortgageValue: 130
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &1355249247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,6 +4656,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Connecticut Ave
+  position: 9
+  cost: 120
+  generalRent: 8
+  houseRent1: 40
+  houseRent2: 100
+  houseRent3: 300
+  houseRent4: 450
+  hotelRent: 600
+  mortgageValue: 60
+  houseCost: 50
+  hotelCost: 50
+  rents: 
 --- !u!1 &1378928755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,10 +5183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19574439c64a644094677a85ba23f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1: {fileID: 1461242312}
-  p2: {fileID: 0}
-  p3: {fileID: 0}
-  p4: {fileID: 0}
+  textObject: {fileID: 1461242312}
   player: {fileID: 1453973403}
 --- !u!1 &1468879558
 GameObject:
@@ -5180,6 +5418,100 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504374023}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1515399481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515399482}
+  - component: {fileID: 1515399485}
+  - component: {fileID: 1515399484}
+  - component: {fileID: 1515399483}
+  m_Layer: 5
+  m_Name: GameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1515399482
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515399481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1168032268}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.7, y: -15.4}
+  m_SizeDelta: {x: 100, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1515399483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515399481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19574439c64a644094677a85ba23f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObject: {fileID: 1515399484}
+  player: {fileID: 0}
+--- !u!114 &1515399484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515399481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Game Text
+--- !u!222 &1515399485
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515399481}
+  m_CullTransparentMesh: 1
 --- !u!1 &1519428936
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,6 +5946,7 @@ GameObject:
   - component: {fileID: 1667689234}
   - component: {fileID: 1667689236}
   - component: {fileID: 1667689235}
+  - component: {fileID: 1667689237}
   m_Layer: 5
   m_Name: p2
   m_TagString: Untagged
@@ -5673,7 +6006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1500
+  m_Text: Start
 --- !u!222 &1667689236
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5682,49 +6015,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667689233}
   m_CullTransparentMesh: 1
---- !u!1 &1672327550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1672327551}
-  - component: {fileID: 1672327552}
-  m_Layer: 0
-  m_Name: ImprovablePropertyCard (22)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1672327551
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672327550}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2039464751}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1672327552
+--- !u!114 &1667689237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672327550}
+  m_GameObject: {fileID: 1667689233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
+  m_Script: {fileID: 11500000, guid: e19574439c64a644094677a85ba23f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1667689235}
+  player: {fileID: 1782346124}
 --- !u!1 &1688318843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,6 +6072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Pacific Ave
+  position: 32
+  cost: 300
+  generalRent: 26
+  houseRent1: 130
+  houseRent2: 390
+  houseRent3: 900
+  houseRent4: 1100
+  hotelRent: 1275
+  mortgageValue: 150
+  houseCost: 200
+  hotelCost: 200
+  rents: 
 --- !u!1 &1744750826
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,6 +6440,7 @@ GameObject:
   - component: {fileID: 1808130790}
   - component: {fileID: 1808130792}
   - component: {fileID: 1808130791}
+  - component: {fileID: 1808130793}
   m_Layer: 5
   m_Name: p4
   m_TagString: Untagged
@@ -6182,7 +6500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1500
+  m_Text: Start
 --- !u!222 &1808130792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6191,6 +6509,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808130789}
   m_CullTransparentMesh: 1
+--- !u!114 &1808130793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808130789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19574439c64a644094677a85ba23f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObject: {fileID: 1808130791}
+  player: {fileID: 1778384948}
 --- !u!1 &1822402035
 GameObject:
   m_ObjectHideFlags: 0
@@ -6202,6 +6534,7 @@ GameObject:
   - component: {fileID: 1822402036}
   - component: {fileID: 1822402038}
   - component: {fileID: 1822402037}
+  - component: {fileID: 1822402039}
   m_Layer: 5
   m_Name: p3
   m_TagString: Untagged
@@ -6261,7 +6594,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1500
+  m_Text: Start
 --- !u!222 &1822402038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6270,6 +6603,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822402035}
   m_CullTransparentMesh: 1
+--- !u!114 &1822402039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822402035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19574439c64a644094677a85ba23f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObject: {fileID: 1822402037}
+  player: {fileID: 2013883289}
 --- !u!1 &1827645224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6856,6 +7203,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Pennsylvania Ave
+  position: 35
+  cost: 320
+  generalRent: 28
+  houseRent1: 150
+  houseRent2: 390
+  houseRent3: 900
+  houseRent4: 1200
+  hotelRent: 1400
+  mortgageValue: 160
+  houseCost: 200
+  hotelCost: 200
+  rents: 
 --- !u!1 &1992577768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,6 +7302,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Pennsylvania Railroad
+  position: 16
+  cost: 200
+  rent: 25
+  rent2: 50
+  rent3: 100
+  rent4: 200
+  mortgageValue: 100
 --- !u!1 &2012761642
 GameObject:
   m_ObjectHideFlags: 0
@@ -7301,6 +7669,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Park Place
+  position: 38
+  cost: 350
+  generalRent: 35
+  houseRent1: 175
+  houseRent2: 500
+  houseRent3: 1100
+  houseRent4: 1300
+  hotelRent: 1500
+  mortgageValue: 175
+  houseCost: 200
+  hotelCost: 200
+  rents: 
 --- !u!1 &2018112102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7344,6 +7725,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Boardwalk
+  position: 40
+  cost: 400
+  generalRent: 50
+  houseRent1: 200
+  houseRent2: 600
+  houseRent3: 1400
+  houseRent4: 1700
+  hotelRent: 2000
+  mortgageValue: 200
+  houseCost: 200
+  hotelCost: 200
+  rents: 
 --- !u!1 &2024175006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,6 +7781,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f60e51b86a42949ad17a4981010057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Short Line
+  position: 36
+  cost: 200
+  rent: 25
+  rent2: 50
+  rent3: 100
+  rent4: 200
+  mortgageValue: 100
 --- !u!1 &2025569297
 GameObject:
   m_ObjectHideFlags: 0
@@ -7420,6 +7822,7 @@ MonoBehaviour:
   player2: {fileID: 1782346121}
   player3: {fileID: 2013883286}
   player4: {fileID: 1778384945}
+  UIMainText: {fileID: 0}
 --- !u!4 &2025569299
 Transform:
   m_ObjectHideFlags: 0
@@ -7496,7 +7899,6 @@ Transform:
   - {fileID: 1992121137}
   - {fileID: 2016515260}
   - {fileID: 2018112103}
-  - {fileID: 1672327551}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7643,6 +8045,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Atlantic Ave
+  position: 27
+  cost: 260
+  generalRent: 22
+  houseRent1: 110
+  houseRent2: 330
+  houseRent3: 800
+  houseRent4: 975
+  hotelRent: 1150
+  mortgageValue: 130
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &2073231493
 GameObject:
   m_ObjectHideFlags: 0
@@ -7907,6 +8322,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e278d18a34ef341a1d4f2327b9bbf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Kentucky Ave
+  position: 22
+  cost: 220
+  generalRent: 18
+  houseRent1: 90
+  houseRent2: 250
+  houseRent3: 700
+  houseRent4: 875
+  hotelRent: 1050
+  mortgageValue: 110
+  houseCost: 150
+  hotelCost: 150
+  rents: 
 --- !u!1 &2120605976
 GameObject:
   m_ObjectHideFlags: 0

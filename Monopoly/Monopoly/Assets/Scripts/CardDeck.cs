@@ -7,21 +7,11 @@ public class CardDeck : MonoBehaviour
     
     //private Transform[] childNodeList;
     private Card[] cardList;
+    private int currentDeckPosition = 0;
 
     // Start is called before the first frame update
     void Start()
     {
- 
-/*
-The problem is you're using GetComponent method but GameObject is not a component. On the other hand, transform contains all the children. So, in order to get children Transforms, you can use this:
-
-foreach (Transform child in transform)
-
-And in order to reach the GameObject, you can do this:
-
-child.gameObject
-*/
-
         Transform[] childNodeList;
         childNodeList = GetComponentsInChildren<Transform>();
         cardList = new Card[childNodeList.Length];
@@ -38,8 +28,10 @@ child.gameObject
         
     }
 
+    //O(N^2) sort function, was lazy while programming....
     public void shuffle() {
         //get randoms for cards
+        currentDeckPosition = 0;
         float[] randomRef = new float[cardList.Length];
 
         for(int i = 0; i < randomRef.Length; i++) 
@@ -61,6 +53,13 @@ child.gameObject
             cardList[i] = cardList[maxPoint];
             cardList[maxPoint] = temp;
         }
+    }
+
+    public Card draw()
+    {
+        Card returnable = cardList[currentDeckPosition];
+        currentDeckPosition++;
+        return returnable;
     }
 
 }

@@ -8,23 +8,28 @@ using System;
 public class UIupdate : MonoBehaviour
 {
 
-      public Text p1;
-      public Text p2;
-      public Text p3;
-      public Text p4;
-      public PlayerData player;
+    public Text textObject;
+    public PlayerData player = null;
 
-   
+
 
     void Update()
     {
-        //Press the space key to change the Text message  
+        //ONLY UPDATE IF CASH
+        if (player != null)
+        {
+            //Press the space key to change the Text message  
             int cash = player.currentCash;
             string playerCash = cash.ToString();
             //Text sets your text to say this message
-            p1.text = playerCash;
+            textObject.text = playerCash;
             //p1.text = "My text has now changed.";
+        }
+    }
 
+    void setText(string newText)
+    {
+        textObject.text = newText;
     }
 
 
