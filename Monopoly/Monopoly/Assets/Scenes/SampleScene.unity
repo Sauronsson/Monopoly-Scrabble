@@ -5454,7 +5454,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.7, y: -15.4}
-  m_SizeDelta: {x: 100, y: 30}
+  m_SizeDelta: {x: 1000, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515399483
 MonoBehaviour:
@@ -7822,7 +7822,7 @@ MonoBehaviour:
   player2: {fileID: 1782346121}
   player3: {fileID: 2013883286}
   player4: {fileID: 1778384945}
-  UIMainText: {fileID: 0}
+  UIMainText: {fileID: 1515399481}
 --- !u!4 &2025569299
 Transform:
   m_ObjectHideFlags: 0

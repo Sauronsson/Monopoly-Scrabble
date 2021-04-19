@@ -27,7 +27,7 @@ public class UIupdate : MonoBehaviour
         }
     }
 
-    void setText(string newText)
+    public void setText(string newText)
     {
         textObject.text = newText;
     }

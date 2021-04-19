@@ -24,6 +24,7 @@ public class main : MonoBehaviour
 
     //To keep track of which part of the turn you're on
     int turnTracker = 0;
+    int prevTurnTracker;
     //To determine who's turn it is
     int currentPlayer = 0;
 
@@ -41,6 +42,7 @@ public class main : MonoBehaviour
         PlayerData p2DataScript = player2.GetComponent<PlayerData>() as PlayerData;
         PlayerData p3DataScript = player3.GetComponent<PlayerData>() as PlayerData;
         PlayerData p4DataScript = player4.GetComponent<PlayerData>() as PlayerData;
+        textUpdater = UIMainText.GetComponent<UIupdate>() as UIupdate;
 
         //Player Specific Scripts
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
@@ -59,6 +61,11 @@ public class main : MonoBehaviour
 
             //Move player character to next location. Keep moving until no doubles. on 3 doubles send to jail
             case 1:
+                if (!playerMovement[currentPlayer].isMoving)
+                {
+                    updateText("Player " + (currentPlayer + 1).ToString() + ": Press space to roll now!");
+                }
+
                 if (Input.GetKeyDown(KeyCode.Space) && !playerMovement[currentPlayer].isMoving)
                 {
                     //Starting Movement information
@@ -71,23 +78,27 @@ public class main : MonoBehaviour
                     //Move Object based off roll
                     if (playerMovement[currentPlayer].permsteps1 != playerMovement[currentPlayer].permsteps2)
                     {
+                        updateText("Dice 1 Rolled: " + playerMovement[currentPlayer].permsteps1.ToString() + "\t\t\tDice 2 Rolled: " + playerMovement[currentPlayer].permsteps2.ToString());
                         playerMovement[currentPlayer].goForwards();
                         turnTracker++;
                     } else {
                         //rolls snake eyes, go to jail
                         if (playerMovement[currentPlayer].permsteps1 == 1)
                         {
+                            updateText("SNAKE EYES!!!!!!! YOU'RE GOING TO JAIL!!!");
                             goToJail(currentPlayer);
                             turnTracker++;
                         }
                         //rolls doubles 3 times, go to jail
                         else if (sameRollCounter == 2)
                         {
+                            updateText("Dice 1 Rolled: " + playerMovement[currentPlayer].permsteps1.ToString() + "\t\t\t You got 3 doubles..... Go to Jail" + "\t\t\tDice 2 Rolled: " + playerMovement[currentPlayer].permsteps2.ToString());
                             goToJail(currentPlayer);
                             turnTracker++;
                         }
                         else
                         {
+                            updateText("Dice 1 Rolled: " + playerMovement[currentPlayer].permsteps1.ToString() + "\t\t\t Doubles, roll again. Don't get 3" + "\t\t\tDice 2 Rolled: " + playerMovement[currentPlayer].permsteps2.ToString());
                             playerMovement[currentPlayer].goForwards();
                             sameRollCounter++;
                         }
@@ -106,7 +117,19 @@ public class main : MonoBehaviour
                         playerData[currentPlayer].passedGo = false;
                     }
                     determineBoardEffect();
-                    turnTracker++;
+                }
+                break;
+
+            //Used for if we need to wait for the player to press space (usually text dialog)
+            case 50000:
+                //if (Time.timeScale == 1)
+                //{
+                //    Time.timeScale = 0;
+                //} else 
+                if (Input.GetKeyDown(KeyCode.Space)){
+                    //move to next part of turn after space...
+                    Time.timeScale = 1;
+                    turnTracker = prevTurnTracker+1;
                 }
                 break;
 
@@ -136,8 +159,15 @@ public class main : MonoBehaviour
         return true;
     }
 
-    private void determineBoardEffect(){
+    private void updateText(string newText)
+    {
+        textUpdater.setText(newText);
+    }
+
+    private void determineBoardEffect()
+    {
         //activate effects from landing on tile
+        //case int i when i >= 16 && i <= 100:
         switch (playerMovement[currentPlayer].routePosition)
         {
             case 0: //GO
@@ -145,22 +175,60 @@ public class main : MonoBehaviour
 
             case 4: //INCOME TAX
                 updateCash(currentPlayer, -200);
+                updateText("Income Tax... Lose $200. (Space)");
+                waitForSpace();
                 break;
 
             case 10: //VISITING JAIL
+                turnTracker++;
+                break;
+
+            case 11:
                 break;
 
             case 21: //FREE PARKING
+                turnTracker++;
                 break;
 
             case 31: //GO TO JAIL
+                updateText("You're going to jail, feller");
                 goToJail(currentPlayer);
+                turnTracker++;
                 break;
 
             case 39: //LUXURY TAX
                 updateCash(currentPlayer, -100);
+                updateText("Luxury Tax... Lose $100. (Space)");
+                waitForSpace();
+                break; //7, 23, 37
+
+            case int i when i == 2 || i == 18 || i == 34:
+                updateText("Community Chest Spot");
+                waitForSpace();
+                break;
+
+            case int i when i == 7 || i == 23 || i == 37:
+                updateText("Chance Chest Spot");
+                waitForSpace();
+                break;
+
+            case int i when i == 5 || i == 13 || i == 16 || i == 26 || i == 29 || i == 36:
+                updateText("Other Property Spot");
+                waitForSpace();
+                break;
+
+            default:
+                updateText("Property Spot");
+                waitForSpace();
                 break;
         }
+    }
+
+    void waitForSpace()
+    {
+        //Uses case 50000 to wait
+        prevTurnTracker = turnTracker;
+        turnTracker = 50000;
     }
 }
 
