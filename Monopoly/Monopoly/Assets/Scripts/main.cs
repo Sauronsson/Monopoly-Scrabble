@@ -15,8 +15,8 @@ public class main : MonoBehaviour
     public GameObject player4;
     public GameObject UIMainText;
     public GameObject positionsObject;
-    public GameObject ChanceCards;
-    public GameObject CommunityChestCards;
+    public GameObject ChanceCard;
+    public GameObject CommunityCard;
     public GameObject playerInput;
     public InputField playerInputText;
     private UIupdate textUpdater;
@@ -63,8 +63,8 @@ public class main : MonoBehaviour
         PlayerData p4DataScript = player4.GetComponent<PlayerData>() as PlayerData;
         textUpdater = UIMainText.GetComponent<UIupdate>() as UIupdate;
         positions = positionsObject.GetComponent<Path>() as Path;
-        CommunityChestDeck = CommunityChestCards.GetComponent<CardDeck>() as CardDeck;
-        ChanceDeck = ChanceCards.GetComponent<CardDeck>() as CardDeck;
+        CommunityChestDeck = CommunityCard.GetComponent<CardDeck>() as CardDeck;
+        ChanceDeck = ChanceCard.GetComponent<CardDeck>() as CardDeck;
 
         property = positions.getPositionData(1).positionObject.GetComponent<ImprovableProperty>() as ImprovableProperty;
         //Player Specific Scripts
@@ -363,17 +363,17 @@ public class main : MonoBehaviour
     }
     private void DetermineCardEffect()
     {
-        /*updateText(cardEffect.ChanceCards);
+        //updateText(ChanceCard.cardEffect);
         
-        ChanceCards cardofChance = CardDeck.Draw();
-        cashEffect = cardofChance.Cash;
-        positionEffect = cardofChance.Position;
+        ChanceCard cardofChance = (ChanceCard)ChanceDeck.draw();
+        int cashEffect = cardofChance.cash;
+        int positionEffect = cardofChance.position;
         updateText(cardofChance.cardEffect);
-        switch (cardofChance.Function)
+        switch (cardofChance.function)
         {
             case 1:
                 //move to position
-                effectPosition = playerMovement[currentPlayer].goToPoint(positionEffect);
+                playerMovement[currentPlayer].goToPoint(positionEffect);
                 break;
             case 2:
                 //add cash
@@ -381,16 +381,16 @@ public class main : MonoBehaviour
                 break;
             case 3:
                 //both 1 and 2
-                effectPosition = playerMovement[currentPlayer].goToPoint(positionEffect);
+                playerMovement[currentPlayer].goToPoint(positionEffect);
                 updateCash(currentPlayer, cashEffect);
                 break;
             case 4:
                 //get out of jail 
-                
+                playerMovement[currentPlayer].goBackwards(positionEffect);
                 break;
             case 5:
                 //go to jail
-                playerMovement[currentPlayer].goToJail();
+                goToJail(currentPlayer);
                 break;
             case 6:
                 //update cash per property the current player owns by specific amount
@@ -398,7 +398,10 @@ public class main : MonoBehaviour
             case 7:
                 //update cash by subtracting cash from every player except current and pay current player that cash
                 break;
-        }*/
+            default:
+                //do nothing 
+                break;
+        }
 
         
     }
