@@ -5,7 +5,7 @@ using UnityEngine;
 public class CommunityCard : Card
 {
     public string cardEffect;
-    //public int count;
+    public int function;
     public int cash;
     public int position;
 

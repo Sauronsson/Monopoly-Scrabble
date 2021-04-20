@@ -331,94 +331,13 @@ public class main : MonoBehaviour
 
             case int i when i == 2 || i == 18 || i == 34:
                 updateText("Community Chest Spot");
-                //pull community Chest card deck and shuffle 
-                // switch-case/if statement for each card
-               /* switch ()
-                {
-                    case 0: // Advance to Go Collect $200
-                        break;
-                    case 1: //BankError Collect $200 
-                        break;
-                    case 2: //FromSaleOfStock Collect $50
-                        break;
-                    case 3: //GetOutOfJailFree 
-                        break;
-                    case 4: //GoToJail
-                        break;
-                    case 5: //HolidayFund Collect $100 
-                        break;
-                    case 6: //IncomeTaxRefund Collect $20
-                        break;
-                    case 7: //Birthday collect $10 from each player
-                        break;
-                    case 8: //LifeInsurance Collect $100
-                        break;
-                    case 9: //HospitalBill pay $100
-                        break;
-                    case 10: //SchoolFees Pay $100 
-                        break;
-                    case 11: //ConsultancyFee Collect $25 
-                        break;
-                    case 12: //SecondPrize Collect $10
-                        break;
-                    case 13: //StreetRepairs Pay $40 per house, $115 per hotel
-                        break;
-                    case 14: //Inheritance Collect $100
-                        break;
-                }*/
+                //reference to cardEffect method
                 waitForSpace();
                 break;
 
             case int i when i == 7 || i == 23 || i == 37:
                 updateText("Chance Chest Spot");
-                //pull chance card deck and shuffle
-                //switch-case/if statement for each card
-                
-                /*switch ()
-                {
-                    case 0: //Advance to Boardwalk 
-                        break;
-                    case 1: //Advance to Go Collect $200 
-                        break;
-                    case 2: //Advance to Go Collect $200  
-                        break;
-                    case 3: //Advance to Illinois Ave 
-                        //if you pass go collect $200
-                        break;
-                    case 4: //Advance to St. Charles Pl. 
-                        //if you pass go collect $200 
-                        break;
-                    case 5: //Advance to Nearest Railroad
-                        //if unowned player may buy it
-                        //else pay owner twice the rental they are entitled
-                        break;
-                    case 6: //Advance to Nearest Railroad
-                        //if unowned player may buy it
-                        //else pay owner twice the rental they are entitled
-                        break;
-                    case 7: //BankPaysYou Collect $50 
-                        break;
-                    case 8: //GeneralRepairs Pay $25 per house, $100 per hotel
-                        break;
-                    case 9: //GetOutofJailFree 
-                        //maybe kept until needed or traded
-                        break;
-                    case 10: //Go back 3 spaces
-                        break;
-                    case 11: //GoToJail 
-                        break;
-                    case 12: //Advance to nearest utility
-                        //if unowned player may buy 
-                        // else roll and pay ten times the amount thrown
-                        break;
-                    case 13: //ReadingRailRoadTrip
-                        //if you pass go collect $200
-                        break;
-                    case 14: //SpeedingFine pay $15
-                        break;
-                    case 15: //BuildingLoanMatures Collect $150
-                        break;
-                }*/
+                // reference to cardEffect method
                 waitForSpace();
                 break;
 
@@ -444,12 +363,44 @@ public class main : MonoBehaviour
     }
     private void DetermineCardEffect()
     {
-        //updateText(cardEffect);
-        /*switch ()
+        /*updateText(cardEffect.ChanceCards);
+        
+        ChanceCards cardofChance = CardDeck.Draw();
+        cashEffect = cardofChance.Cash;
+        positionEffect = cardofChance.Position;
+        updateText(cardofChance.cardEffect);
+        switch (cardofChance.Function)
         {
             case 1:
-
+                //move to position
+                effectPosition = playerMovement[currentPlayer].goToPoint(positionEffect);
+                break;
+            case 2:
+                //add cash
+                updateCash(currentPlayer, cashEffect);
+                break;
+            case 3:
+                //both 1 and 2
+                effectPosition = playerMovement[currentPlayer].goToPoint(positionEffect);
+                updateCash(currentPlayer, cashEffect);
+                break;
+            case 4:
+                //get out of jail 
+                
+                break;
+            case 5:
+                //go to jail
+                playerMovement[currentPlayer].goToJail();
+                break;
+            case 6:
+                //update cash per property the current player owns by specific amount
+                break;
+            case 7:
+                //update cash by subtracting cash from every player except current and pay current player that cash
+                break;
         }*/
+
+        
     }
 
     void buyProperty(int player, int cost, ImprovableProperty property)

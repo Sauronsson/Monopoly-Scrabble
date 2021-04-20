@@ -276,9 +276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Get Out Of Jail Free
+  function: 4
   cash: 0
-  position: 0
+  position: 10
 --- !u!1 &111434033
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Advance to Nearest Railroad
+  function: 1
   cash: 0
   position: 0
 --- !u!1 &250053721
@@ -816,9 +818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
-  position: 0
+  cardEffect: Advance to St. Charles Pl.
+  function: 3
+  cash: 200
+  position: 12
 --- !u!1 &311818079
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Advance to Nearest Railroad
+  function: 1
   cash: 0
   position: 0
 --- !u!1 &342505428
@@ -1077,8 +1081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: 'Advance to Go (Collect $200) '
+  function: 3
+  cash: 200
   position: 0
 --- !u!1 &356653890
 GameObject:
@@ -1123,9 +1128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
-  position: 0
+  cardEffect: Reading Rail Road Trip
+  function: 3
+  cash: 200
+  position: 5
 --- !u!1 &363042162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,8 +1402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Advance to Go (Collect $200)
+  function: 3
+  cash: 200
   position: 0
 --- !u!1 &441866756
 GameObject:
@@ -1442,9 +1449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Advance to Boardwalk
+  function: 1
   cash: 0
-  position: 0
+  position: 40
 --- !u!1 &456796444
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,8 +3306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Hospital Bill (pay $100)
+  function: 2
+  cash: -100
   position: 0
 --- !u!1 &899639157
 GameObject:
@@ -3454,8 +3463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Consultancy Fee (Collect $25)
+  function: 2
+  cash: 25
   position: 0
 --- !u!1 &948478861
 GameObject:
@@ -3714,7 +3724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Advance to nearest utility
+  function: 1
   cash: 0
   position: 0
 --- !u!1 &999793388
@@ -3819,8 +3830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Inheritance (Collect $100)
+  function: 2
+  cash: 100
   position: 0
 --- !u!1 &1027446964
 GameObject:
@@ -3865,7 +3877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Go back 3 spaces
+  function: 1
   cash: 0
   position: 0
 --- !u!1 &1049549532
@@ -4021,8 +4034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: 'Advance to Go (Collect $200) '
+  function: 3
+  cash: 200
   position: 0
 --- !u!1 &1109398811
 GameObject:
@@ -4320,7 +4334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Birthday (Collect $10 from each player)
+  function: 7
   cash: 0
   position: 0
 --- !u!1 &1168032267
@@ -4448,8 +4463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Building Loan Matures (Collect $150)
+  function: 2
+  cash: 150
   position: 0
 --- !u!1 &1184331574
 GameObject:
@@ -4663,8 +4679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Holiday Fund (Collect $100)
+  function: 2
+  cash: 100
   position: 0
 --- !u!1 &1248256380
 GameObject:
@@ -4709,8 +4726,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: 'BankPaysYou (Collect $50) '
+  function: 2
+  cash: 50
   position: 0
 --- !u!1 &1257320172
 GameObject:
@@ -4755,7 +4773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: General Repairs (Pay $25 per house, $100 per hotel)
+  function: 6
   cash: 0
   position: 0
 --- !u!1 &1268045928
@@ -5283,9 +5302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: 'Get Out of Jail Free '
+  function: 4
   cash: 0
-  position: 0
+  position: 10
 --- !u!1 &1366699421
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,9 +5408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Go To Jail
+  function: 5
   cash: 0
-  position: 0
+  position: 11
 --- !u!1 &1397520991
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,9 +5754,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Go To Jail
+  function: 5
   cash: 0
-  position: 0
+  position: 11
 --- !u!1 &1453973400
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,8 +5962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: From Sale Of Stock (Collect $50)
+  function: 2
+  cash: 50
   position: 0
 --- !u!1 &1499478056
 GameObject:
@@ -6630,8 +6653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Income Tax Refund (Collect $20)
+  function: 2
+  cash: 20
   position: 0
 --- !u!1 &1667154770
 GameObject:
@@ -7486,8 +7510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Hospital Bill (pay $100)
+  function: 2
+  cash: -100
   position: 0
 --- !u!1 &1870853788
 GameObject:
@@ -7642,9 +7667,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
-  position: 0
+  cardEffect: Advance to Illinois Ave
+  function: 3
+  cash: 200
+  position: 25
 --- !u!1 &1930805760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7688,8 +7714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Life Insurance (Collect $100)
+  function: 2
+  cash: 100
   position: 0
 --- !u!1 &1948559474
 GameObject:
@@ -7734,8 +7761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Bank Error (Collect $200)
+  function: 2
+  cash: 200
   position: 0
 --- !u!1 &1957099209
 GameObject:
@@ -7780,7 +7808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
+  cardEffect: Street Repairs (Pay $40 per house, $115 per hotel)
+  function: 6
   cash: 0
   position: 0
 --- !u!1 &1973558919
@@ -8046,8 +8075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb977d768cc1ac40ac66a9a7c54536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Second Prize (Collect $10)
+  function: 2
+  cash: 10
   position: 0
 --- !u!1 &1992121136
 GameObject:
@@ -8151,8 +8181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351d22a06b3ac4438f9702752558827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardEffect: 
-  cash: 0
+  cardEffect: Speeding Fine (pay $15)
+  function: 2
+  cash: -15
   position: 0
 --- !u!1 &2001315065
 GameObject:
@@ -9257,7 +9288,7 @@ MonoBehaviour:
   - {fileID: 686924312}
   - {fileID: 1973558920}
   - {fileID: 1403070676}
-  size: 99712
+  size: 191019
 --- !u!4 &2077852190
 Transform:
   m_ObjectHideFlags: 0
