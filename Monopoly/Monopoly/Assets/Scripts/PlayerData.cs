@@ -12,6 +12,8 @@ public class PlayerData : MonoBehaviour
     public bool    passedGo = false;
     public int     jailCounter = 0;
     public int     currentOwedCash = 0;
+    public int railroadsOwned = -1;
+    public int utilitiesOwned = -1;
     
 
     // Start is called before the first frame update
