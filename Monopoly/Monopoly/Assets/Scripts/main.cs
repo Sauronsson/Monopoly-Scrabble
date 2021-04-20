@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
+using System.Globalization;
 
 
 public class main : MonoBehaviour
@@ -14,6 +17,8 @@ public class main : MonoBehaviour
     public GameObject positionsObject;
     public GameObject ChanceCards;
     public GameObject CommunityChestCards;
+    public GameObject playerInput;
+    public InputField playerInputText;
     private UIupdate textUpdater;
     private Path positions;
     private int amountOfPlayers = 4;
@@ -31,10 +36,16 @@ public class main : MonoBehaviour
 
 
     //To keep track of which part of the turn you're on
-    int turnTracker = 0;
-    int prevTurnTracker;
+    private int turnTracker = 0;
+    private int prevTurnTracker;
     //To determine who's turn it is
-    int currentPlayer = 0;
+    private int currentPlayer = 0;
+    private int prevCurrentPlayer = 0;
+
+    //Function Utilities
+    private ImprovableProperty property = null; 
+    private int lastUpdatedPlayer = 0;
+    private int cashTracker = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -55,9 +66,11 @@ public class main : MonoBehaviour
         CommunityChestDeck = CommunityChestCards.GetComponent<CardDeck>() as CardDeck;
         ChanceDeck = ChanceCards.GetComponent<CardDeck>() as CardDeck;
 
+        property = positions.getPositionData(1).positionObject.GetComponent<ImprovableProperty>() as ImprovableProperty;
         //Player Specific Scripts
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
         playerData = new PlayerData[] { p1DataScript, p2DataScript, p3DataScript, p4DataScript };
+        playerInput.SetActive(false);
     }
 
     // Update is called once per frame
@@ -147,6 +160,105 @@ public class main : MonoBehaviour
                 }
                 break;
 
+            //Used to go over property if already owned by a player
+            case 50002: //ASSUMED: property is defined
+                updateCash(currentPlayer, -1 * property.getRent());
+                updateCash(property.currentOwnerInt, property.getRent());
+                updateText("Paying Player " + (property.currentOwnerInt+1) + " $" + property.getRent());
+                waitForSpaceNoTracking();
+                break;
+
+            //Used to buy property
+            case 50003: //ASSUMED: property is defined
+                updateText(property.name + " costs: " + property.cost + ". Would you like to buy it? yes: (y), no: (n)");
+                if (Input.GetKeyDown(KeyCode.Y)) {
+                    buyProperty(currentPlayer, property.cost, property);
+                    updateText("Congrats on your purchase! (space)");
+                    waitForSpaceNoTracking();
+                    turnTracker = prevTurnTracker+1;
+                } else if (Input.GetKeyDown(KeyCode.N)) {
+                    updateText("Moving to Auction. Current player will start with $1");
+                    lastUpdatedPlayer = currentPlayer; //so we don't lose person's turn
+                    cashTracker = 1;
+                    prevCurrentPlayer = currentPlayer;
+                    currentPlayer++;
+                    waitForSpace(); //will advance turn tracker to auction state
+                }
+                break;
+
+            case 50004://AUCTION acts as its own turn order until finished //TODO ADD LOGIC FOR VALUE THE SAME, OR BELOW
+                playerInput.SetActive(true);
+                updateText("Can you beat $" + cashTracker + " player " + (currentPlayer+1) + "? Player " +(prevCurrentPlayer+1)+" is in the lead. (enter)");
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+                {
+                    playerInputText = playerInput.GetComponent<InputField>() as InputField;
+                    if (playerInputText.text != "")
+                    {
+                        try
+                        {
+                            int newCash = Int32.Parse(playerInputText.text);
+                            if (newCash > cashTracker)
+                            {
+                                cashTracker = newCash;
+                                playerInputText.text = "";
+                                prevCurrentPlayer = currentPlayer;
+                                updateText("Player " + (currentPlayer + 1) + " is in the lead with $" + cashTracker);
+                                if (currentPlayer + 1 == amountOfPlayers)
+                                {
+                                    currentPlayer = 0;
+                                }
+                                else
+                                {
+                                    currentPlayer = currentPlayer + 1;
+                                }
+                                waitForSpaceReturnHere();
+                                break;
+                            }
+                            else
+                            {
+                                updateText("Not a valid number, try again");
+                                playerInputText.text = "";
+                                waitForSpaceReturnHere();
+                                break;
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            updateText("Not a valid number, try again");
+                            playerInputText.text = "";
+                            waitForSpaceReturnHere();
+                            break;
+                        }
+
+                    } else { //blank text box
+                        if (currentPlayer+1 == prevCurrentPlayer)
+                        {
+                            buyProperty(currentPlayer, cashTracker, property);
+                            updateText("Congrats Player " + (prevCurrentPlayer+1) + " on winning the auction! Enjoy your new property!");
+                            currentPlayer = lastUpdatedPlayer;
+                            turnTracker = 2; //This is bad practice. don't do this.
+                            playerInput.SetActive(false);
+                            waitForSpace();
+                            break;
+                        }
+                        else
+                        {
+                            if (currentPlayer + 1 == amountOfPlayers)
+                            {
+                                currentPlayer = 0;
+                            }
+                            else
+                            {
+                                currentPlayer = currentPlayer + 1;
+                            }
+                            break;
+                        }
+                    }
+                }
+                break;
+
+                
             //move to next player, reset turn tracker
             default:
                 if (currentPlayer+1 == amountOfPlayers) {
@@ -198,6 +310,7 @@ public class main : MonoBehaviour
                 break;
 
             case 11:
+                turnTracker++;
                 break;
 
             case 21: //FREE PARKING
@@ -315,9 +428,17 @@ public class main : MonoBehaviour
                 break;
 
             default:
-                ImprovableProperty property = positions.getPositionData(playerMovement[currentPlayer].routePosition).positionObject.GetComponent<ImprovableProperty>() as ImprovableProperty;
-                updateText("Landed on: " + property.name + " (space)");
-                waitForSpace();
+                property = positions.getPositionData(playerMovement[currentPlayer].routePosition).positionObject.GetComponent<ImprovableProperty>() as ImprovableProperty;
+                if (property.currentOwner != null)
+                {
+                    //property is currently Owned
+                    prevTurnTracker = turnTracker;
+                    turnTracker = 50002;
+                } else {
+                    //property isn't currently Owned
+                    prevTurnTracker = turnTracker;
+                    turnTracker = 50003;
+                }
                 break;
         }
     }
@@ -329,6 +450,13 @@ public class main : MonoBehaviour
             case 1:
 
         }*/
+    }
+
+    void buyProperty(int player, int cost, ImprovableProperty property)
+    {
+        updateCash(player, -1 * cost);
+        property.currentOwner = playerData[player];
+        property.currentOwnerInt = player;
     }
 
     void waitForSpace()
@@ -343,6 +471,11 @@ public class main : MonoBehaviour
         //Uses case 50001
         prevTurnTracker = turnTracker;
         turnTracker = 50001;
+    }
+
+    void waitForSpaceNoTracking()
+    {
+        turnTracker = 50000;
     }
 
 }

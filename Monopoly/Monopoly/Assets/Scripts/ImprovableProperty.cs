@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class ImprovableProperty : Card
 {
-    public string name;
-    public int position;
-    public int cost;
-    public int generalRent;
-    public int houseRent1;
-    public int houseRent2;
-    public int houseRent3;
-    public int houseRent4;
-    public int hotelRent;
-    public int mortgageValue;
-    public int houseCost;
-    public int hotelCost;
+    public string name = null;
+    public int position = 0;
+    public int cost = 0;
+    public int generalRent = 0;
+    public int houseRent1 = 0;
+    public int houseRent2 = 0;
+    public int houseRent3 = 0;
+    public int houseRent4 = 0;
+    public int hotelRent = 0;
+    public int mortgageValue = 0;
+    public int houseCost = 0;
+    public int hotelCost = 0;
     public int[] rents;
+
+
+
     public PlayerData currentOwner = null;
+    public int currentOwnerInt = -1;
+    public int houseCount = 0;
 
 
 
@@ -31,5 +36,10 @@ public class ImprovableProperty : Card
     void Update()
     {
         
+    }
+
+    public int getRent()
+    {
+        return rents[houseCount];
     }
 }
