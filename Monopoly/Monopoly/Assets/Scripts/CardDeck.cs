@@ -8,6 +8,8 @@ public class CardDeck : MonoBehaviour
     //private Transform[] childNodeList;
     private Card[] cardList;
     private int currentDeckPosition = 0;
+    
+    
 
     // Start is called before the first frame update
     void Start()

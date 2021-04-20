@@ -86,6 +86,16 @@ public class SteppingStones : MonoBehaviour
         isMoving = false;
     }
 
+    public bool goToPoint(int newPosition)
+    {
+
+        steps = 0;
+        isMoving = false;
+        steps = 1;
+        StartCoroutine(MoveSpecificPoint(newPosition));
+        return true;
+    }
+
     IEnumerator MoveForwards()
     {
         if (isMoving)

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ChanceCard : Card
 {
+    public string cardEffect;
+    //public int count;
+    public int cash;
+    public int position;
+
     // Start is called before the first frame update
     void Start()
     {

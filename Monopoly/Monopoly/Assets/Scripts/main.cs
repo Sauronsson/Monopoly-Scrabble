@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class main : MonoBehaviour
 {
 
@@ -11,6 +12,8 @@ public class main : MonoBehaviour
     public GameObject player4;
     public GameObject UIMainText;
     public GameObject positionsObject;
+    public GameObject ChanceCards;
+    public GameObject CommunityChestCards;
     private UIupdate textUpdater;
     private Path positions;
     private int amountOfPlayers = 4;
@@ -18,7 +21,10 @@ public class main : MonoBehaviour
     private SteppingStones[] playerMovement;
     private PlayerData[] playerData;
     private int sameRollCounter = 0;
-    
+    private CardDeck CommunityChestDeck;
+    private CardDeck ChanceDeck;
+
+
 
     //data for main to keep track of information.
     private int startingPosition;
@@ -46,6 +52,8 @@ public class main : MonoBehaviour
         PlayerData p4DataScript = player4.GetComponent<PlayerData>() as PlayerData;
         textUpdater = UIMainText.GetComponent<UIupdate>() as UIupdate;
         positions = positionsObject.GetComponent<Path>() as Path;
+        CommunityChestDeck = CommunityChestCards.GetComponent<CardDeck>() as CardDeck;
+        ChanceDeck = ChanceCards.GetComponent<CardDeck>() as CardDeck;
 
         //Player Specific Scripts
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
@@ -210,11 +218,94 @@ public class main : MonoBehaviour
 
             case int i when i == 2 || i == 18 || i == 34:
                 updateText("Community Chest Spot");
+                //pull community Chest card deck and shuffle 
+                // switch-case/if statement for each card
+               /* switch ()
+                {
+                    case 0: // Advance to Go Collect $200
+                        break;
+                    case 1: //BankError Collect $200 
+                        break;
+                    case 2: //FromSaleOfStock Collect $50
+                        break;
+                    case 3: //GetOutOfJailFree 
+                        break;
+                    case 4: //GoToJail
+                        break;
+                    case 5: //HolidayFund Collect $100 
+                        break;
+                    case 6: //IncomeTaxRefund Collect $20
+                        break;
+                    case 7: //Birthday collect $10 from each player
+                        break;
+                    case 8: //LifeInsurance Collect $100
+                        break;
+                    case 9: //HospitalBill pay $100
+                        break;
+                    case 10: //SchoolFees Pay $100 
+                        break;
+                    case 11: //ConsultancyFee Collect $25 
+                        break;
+                    case 12: //SecondPrize Collect $10
+                        break;
+                    case 13: //StreetRepairs Pay $40 per house, $115 per hotel
+                        break;
+                    case 14: //Inheritance Collect $100
+                        break;
+                }*/
                 waitForSpace();
                 break;
 
             case int i when i == 7 || i == 23 || i == 37:
                 updateText("Chance Chest Spot");
+                //pull chance card deck and shuffle
+                //switch-case/if statement for each card
+                
+                /*switch ()
+                {
+                    case 0: //Advance to Boardwalk 
+                        break;
+                    case 1: //Advance to Go Collect $200 
+                        break;
+                    case 2: //Advance to Go Collect $200  
+                        break;
+                    case 3: //Advance to Illinois Ave 
+                        //if you pass go collect $200
+                        break;
+                    case 4: //Advance to St. Charles Pl. 
+                        //if you pass go collect $200 
+                        break;
+                    case 5: //Advance to Nearest Railroad
+                        //if unowned player may buy it
+                        //else pay owner twice the rental they are entitled
+                        break;
+                    case 6: //Advance to Nearest Railroad
+                        //if unowned player may buy it
+                        //else pay owner twice the rental they are entitled
+                        break;
+                    case 7: //BankPaysYou Collect $50 
+                        break;
+                    case 8: //GeneralRepairs Pay $25 per house, $100 per hotel
+                        break;
+                    case 9: //GetOutofJailFree 
+                        //maybe kept until needed or traded
+                        break;
+                    case 10: //Go back 3 spaces
+                        break;
+                    case 11: //GoToJail 
+                        break;
+                    case 12: //Advance to nearest utility
+                        //if unowned player may buy 
+                        // else roll and pay ten times the amount thrown
+                        break;
+                    case 13: //ReadingRailRoadTrip
+                        //if you pass go collect $200
+                        break;
+                    case 14: //SpeedingFine pay $15
+                        break;
+                    case 15: //BuildingLoanMatures Collect $150
+                        break;
+                }*/
                 waitForSpace();
                 break;
 
@@ -230,6 +321,15 @@ public class main : MonoBehaviour
                 break;
         }
     }
+    private void DetermineCardEffect()
+    {
+        //updateText(cardEffect);
+        /*switch ()
+        {
+            case 1:
+
+        }*/
+    }
 
     void waitForSpace()
     {
@@ -244,5 +344,6 @@ public class main : MonoBehaviour
         prevTurnTracker = turnTracker;
         turnTracker = 50001;
     }
+
 }
 
