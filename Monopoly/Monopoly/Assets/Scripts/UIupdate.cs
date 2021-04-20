@@ -10,6 +10,8 @@ public class UIupdate : MonoBehaviour
 
     public Text textObject;
     public PlayerData player = null;
+    public ImprovableProperty property = null;
+    public OtherProperty oProperty = null;
 
 
 
@@ -24,6 +26,16 @@ public class UIupdate : MonoBehaviour
             //Text sets your text to say this message
             textObject.text = playerCash;
             //p1.text = "My text has now changed.";
+        }
+
+        if (property != null)
+        {
+            textObject.text = (property.name + ": " + property.currentOwnerInt.ToString() + "   H: " + property.houseCount.ToString());
+        }
+
+        if (oProperty != null)
+        {
+            textObject.text = (oProperty.name + ": " + oProperty.currentOwnerInt.ToString());
         }
     }
 

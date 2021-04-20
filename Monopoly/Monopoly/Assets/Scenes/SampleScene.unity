@@ -8786,8 +8786,8 @@ MonoBehaviour:
   player4: {fileID: 1778384945}
   UIMainText: {fileID: 1515399481}
   positionsObject: {fileID: 2077852188}
-  ChanceCards: {fileID: 2013628070}
-  CommunityChestCards: {fileID: 363042162}
+  ChanceCard: {fileID: 2013628070}
+  CommunityCard: {fileID: 1018694010}
   playerInput: {fileID: 1109398811}
   playerInputText: {fileID: 1109398813}
 --- !u!4 &2025569299
@@ -9288,7 +9288,7 @@ MonoBehaviour:
   - {fileID: 686924312}
   - {fileID: 1973558920}
   - {fileID: 1403070676}
-  size: 191019
+  size: 191511
 --- !u!4 &2077852190
 Transform:
   m_ObjectHideFlags: 0

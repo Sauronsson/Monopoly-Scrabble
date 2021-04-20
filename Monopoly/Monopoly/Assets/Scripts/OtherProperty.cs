@@ -13,6 +13,10 @@ public class OtherProperty : Card
     public int rent4;
     public int mortgageValue;
 
+
+    public PlayerData currentOwner = null;
+    public int currentOwnerInt = -1;
+
     // Start is called before the first frame update
     void Start()
     {
