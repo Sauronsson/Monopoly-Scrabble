@@ -14,8 +14,8 @@ public class PlayerData : MonoBehaviour
     public int     currentOwedCash = 0;
     public int railroadsOwned = -1;
     public int utilitiesOwned = -1;
-    public ImprovableProperty List<ImprovableProperty> ImprovableProperties = new List<ImprovableProperty>();
-    public OtherProperty List<OtherProperty> OtherProperties = new List<OtherProperty>();
+    public List<ImprovableProperty> ImprovableProperties = new List<ImprovableProperty>();
+    public List<OtherProperty> OtherProperties = new List<OtherProperty>();
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +39,8 @@ public class PlayerData : MonoBehaviour
     //Goal 1: Track player property in player data
     public void addImprovableProperty(ImprovableProperty improvablePropertyObject)
     {
-        ImprovableProperties.add(improvablePropertyObject);
-        Debug.Log();
+        ImprovableProperties.Add(improvablePropertyObject);
+        //Debug.Log();
     }
     public void removeImprovableProperty(ImprovableProperty improvablePropertyObject)
     {
@@ -49,8 +49,8 @@ public class PlayerData : MonoBehaviour
 
     public void addOtherProperty(OtherProperty otherPropertyObject)
     {
-        OtherProperties.add(OtherProperty otherPropertyObject);
-        Debug.Log();
+        OtherProperties.Add(otherPropertyObject);
+        //Debug.Log();
     }
     public void removeOtherProperty(OtherProperty otherPropertyObject)
     {
