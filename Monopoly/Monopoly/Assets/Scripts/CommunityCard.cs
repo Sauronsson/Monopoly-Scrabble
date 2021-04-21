@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CommunityCard : Card
 {
-    public string cardEffect;
-    public int function;
-    public int cash;
-    public int position;
+    public string cardEffect = "";
+    public int function = -1;
+    public int cash = -1;
+    public int position = -1;
 
     // Start is called before the first frame update
     void Start()
