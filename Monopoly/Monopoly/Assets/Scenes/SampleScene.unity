@@ -7673,8 +7673,10 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
-  railroadOwned: -1
+  railroadsOwned: -1
   utilitiesOwned: -1
+  ImprovableProperties: []
+  OtherProperties: []
 --- !u!1 &1461242310
 GameObject:
   m_ObjectHideFlags: 0
@@ -9438,8 +9440,10 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
-  railroadOwned: -1
+  railroadsOwned: -1
   utilitiesOwned: -1
+  ImprovableProperties: []
+  OtherProperties: []
 --- !u!1 &1782346121
 GameObject:
   m_ObjectHideFlags: 0
@@ -9507,8 +9511,10 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
-  railroadOwned: -1
+  railroadsOwned: -1
   utilitiesOwned: -1
+  ImprovableProperties: []
+  OtherProperties: []
 --- !u!1 &1792301771
 GameObject:
   m_ObjectHideFlags: 0
@@ -11108,8 +11114,10 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
-  railroadOwned: -1
+  railroadsOwned: -1
   utilitiesOwned: -1
+  ImprovableProperties: []
+  OtherProperties: []
 --- !u!1 &2016132625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11429,7 +11437,7 @@ MonoBehaviour:
   UIMainText: {fileID: 1515399481}
   positionsObject: {fileID: 2077852188}
   ChanceCard: {fileID: 2013628070}
-  CommunityCard: {fileID: 1018694010}
+  CommunityCard: {fileID: 363042162}
   playerInput: {fileID: 1109398811}
   playerInputText: {fileID: 1109398813}
 --- !u!4 &2025569299
