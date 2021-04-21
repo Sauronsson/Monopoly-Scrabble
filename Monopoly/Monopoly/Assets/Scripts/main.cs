@@ -543,6 +543,7 @@ public class main : MonoBehaviour
     private void DetermineChanceCardEffect()
     {
         ChanceCard cardofChance = (ChanceCard)(ChanceDeck.draw());
+        Debug.Log(cardofChance);
         //updateText(ChanceCard.CardEffect);
         int cashEffect = -1; // = cardofChance.cash;
         int positionEffect = -1; // = cardofChance.position;
@@ -571,14 +572,6 @@ public class main : MonoBehaviour
                 break;
             case 6://update cash per property the current player owns by specific amount\\not implemented//
                 break;
-           /* case 7://update cash by subtracting cash from every player except current and pay current player that cash
-                int Bdaymoney = (amountOfPlayers-1)*10;
-                for (int i = 0; i<=(amountOfPlayers); i++)
-                {
-                    updateCash(i, cashEffect);
-                }
-                updateCash(currentPlayer, Bdaymoney);
-                break;*/
             default:
                 //do nothing 
                 break;
