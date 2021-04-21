@@ -199,7 +199,6 @@ public class main : MonoBehaviour
                 break;
 
 
-
             //Used for if we need to wait for the player to press space (usually text dialog)
             case 50000:
                 if (Input.GetKeyDown(KeyCode.Space)) {
@@ -221,6 +220,7 @@ public class main : MonoBehaviour
                 updateCash(currentPlayer, -1 * property.getRent());
                 updateCash(property.currentOwnerInt, property.getRent());
                 updateText("Paying Player " + (property.currentOwnerInt + 1) + " $" + property.getRent());
+                //zeroCashCheckUpdate();
                 waitForSpaceNoTracking();
                 break;
 
@@ -229,6 +229,7 @@ public class main : MonoBehaviour
                 updateText(property.name + " costs: " + property.cost + ". Would you like to buy it? yes: (y), no: (n)");
                 if (Input.GetKeyDown(KeyCode.Y)) {
                     buyProperty(currentPlayer, property.cost, property);
+                    //zeroCashCheckUpdate();
                     updateText("Congrats on your purchase! (space)");
                     waitForSpaceNoTracking();
                     turnTracker = prevTurnTracker + 1;
@@ -426,6 +427,174 @@ public class main : MonoBehaviour
                 }
                 break;
 
+            case 50008://Auctioning all properties in the case of player bankruptcy
+                List <ImprovableProperty> PropertyLedger = playerData[currentPlayer].ImprovableProperties;
+                if (PropertyLedger == null)
+                {
+                    //do nothing 
+                }
+                else
+                {
+                    playerInput.SetActive(true);
+                    updateText("Can you beat $" + cashTracker + " player " + (currentPlayer + 1) + "? Player " + (prevCurrentPlayer + 1) + " is in the lead. (space)");
+                    if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerInputText = playerInput.GetComponent<InputField>() as InputField;
+                        if (playerInputText.text != "")
+                        {
+                            try
+                            {
+                                int newCash = Int32.Parse(playerInputText.text);
+                                if (newCash > cashTracker)
+                                {
+                                    cashTracker = newCash;
+                                    playerInputText.text = "";
+                                    prevCurrentPlayer = currentPlayer;
+                                    updateText("Player " + (currentPlayer + 1) + " is in the lead with $" + cashTracker);
+                                    if (currentPlayer + 1 == amountOfPlayers)
+                                    {
+                                        currentPlayer = 0;
+                                    }
+                                    else
+                                    {
+                                        currentPlayer = currentPlayer + 1;
+                                    }
+                                    waitForSpaceReturnHere();
+                                    break;
+                                }
+                                else
+                                {
+                                    updateText("Not a valid number, try again");
+                                    playerInputText.text = "";
+                                    waitForSpaceReturnHere();
+                                    break;
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+                                updateText("Not a valid number, try again");
+                                playerInputText.text = "";
+                                waitForSpaceReturnHere();
+                                break;
+                            }
+
+                        }
+                        else
+                        { //blank text box
+                            if (currentPlayer + 1 == prevCurrentPlayer)
+                            {
+                                buyProperty(currentPlayer, cashTracker, property);
+                                updateText("Congrats Player " + (prevCurrentPlayer + 1) + " on winning the auction! Enjoy your new property!");
+                                currentPlayer = lastUpdatedPlayer;
+                                turnTracker = 2; //This is bad practice. don't do this.
+                                playerInput.SetActive(false);
+                                waitForSpace();
+                                break;
+                            }
+                            else
+                            {
+                                if (currentPlayer + 1 == amountOfPlayers)
+                                {
+                                    currentPlayer = 0;
+                                }
+                                else
+                                {
+                                    currentPlayer = currentPlayer + 1;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    break;
+
+                    playerData[currentPlayer].removeImprovableProperty(property);
+
+                }
+                List <OtherProperty> emptyOPropertyLedger = playerData[currentPlayer].OtherProperties;
+                if (emptyOPropertyLedger == null)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    
+                    playerInput.SetActive(true);
+                    updateText("Can you beat $" + cashTracker + " player " + (currentPlayer + 1) + "? Player " + (prevCurrentPlayer + 1) + " is in the lead. (space)");
+                    if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerInputText = playerInput.GetComponent<InputField>() as InputField;
+                        if (playerInputText.text != "")
+                        {
+                            try
+                            {
+                                int newCash = Int32.Parse(playerInputText.text);
+                                if (newCash > cashTracker)
+                                {
+                                    cashTracker = newCash;
+                                    playerInputText.text = "";
+                                    prevCurrentPlayer = currentPlayer;
+                                    updateText("Player " + (currentPlayer + 1) + " is in the lead with $" + cashTracker);
+                                    if (currentPlayer + 1 == amountOfPlayers)
+                                    {
+                                        currentPlayer = 0;
+                                    }
+                                    else
+                                    {
+                                        currentPlayer = currentPlayer + 1;
+                                    }
+                                    waitForSpaceReturnHere();
+                                    break;
+                                }
+                                else
+                                {
+                                    updateText("Not a valid number, try again");
+                                    playerInputText.text = "";
+                                    waitForSpaceReturnHere();
+                                    break;
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+                                updateText("Not a valid number, try again");
+                                playerInputText.text = "";
+                                waitForSpaceReturnHere();
+                                break;
+                            }
+
+                        }
+                        else
+                        { //blank text box
+                            if (currentPlayer + 1 == prevCurrentPlayer)
+                            {
+                                buyOProperty(currentPlayer, cashTracker, oProperty);
+                                updateText("Congrats Player " + (prevCurrentPlayer + 1) + " on winning the auction! Enjoy your new property!");
+                                currentPlayer = lastUpdatedPlayer;
+                                turnTracker = 2; //This is bad practice. don't do this.
+                                playerInput.SetActive(false);
+                                waitForSpace();
+                                break;
+                            }
+                            else
+                            {
+                                if (currentPlayer + 1 == amountOfPlayers)
+                                {
+                                    currentPlayer = 0;
+                                }
+                                else
+                                {
+                                    currentPlayer = currentPlayer + 1;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    playerData[currentPlayer].removeOtherProperty(oProperty);
+                }
+
+                break;//end case 50008
+            
 
             //move to next player, reset turn tracker
             default:
@@ -455,6 +624,7 @@ public class main : MonoBehaviour
         return true;
     }
 
+    /*Drives board effects for each space*/
     private void determineBoardEffect()
     {
         //activate effects from landing on tile
@@ -540,7 +710,11 @@ public class main : MonoBehaviour
                 break;
         }
     }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    
+
+    /*Chance and Community card Effect methods*/
     private void DetermineChanceCardEffect()
     {
         ChanceCard cardofChance = (ChanceCard)(ChanceDeck.draw());
@@ -623,7 +797,9 @@ public class main : MonoBehaviour
                 break;
         }
     }
-
+    ///////////////////////////////////////////////////////////
+    
+    /*Buying property helper methods*/
     void buyOProperty(int player, int cost, OtherProperty oProperty)
     {
         updateCash(player, -1 * cost);
@@ -648,7 +824,9 @@ public class main : MonoBehaviour
         //reference to propertyhelpers
         playerData[player].addImprovableProperty(property);
     }
+    ////////////////////////////////////////////////////////////////////
 
+    /*various functions that assist in gameplay*/
     void waitForSpace()
     {
         //Uses case 50000 to wait
@@ -672,4 +850,25 @@ public class main : MonoBehaviour
     {
         textUpdater.setText(newText);
     }
+    ////////////////////////////////////////////////////////////////////////////////
+
+    /*This is for use in the auctioning of the properties per player bankruptcy*/
+    void zeroCashCheckUpdate()
+    {
+        if (playerData[currentPlayer].currentCash < 0)
+        {
+            turnTracker = 50008;
+        }     
+    }
+    /*Removing Property Helper functions*/
+    private void removeProperty(int player, ImprovableProperty property)
+    {
+        playerData[player].removeImprovableProperty(property);
+    }
+
+    private void removeOProperty(int player, OtherProperty Oproperty)
+    {
+        playerData[player].removeOtherProperty(Oproperty);
+    }
+    ////////////////////////////////////////////////////////////////////////////
 }
