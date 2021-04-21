@@ -71,6 +71,8 @@ public class main : MonoBehaviour
         playerMovement = new SteppingStones[] { p1MoveScript, p2MoveScript, p3MoveScript, p4MoveScript };
         playerData = new PlayerData[] { p1DataScript, p2DataScript, p3DataScript, p4DataScript };
         playerInput.SetActive(false);
+        ChanceDeck.shuffle();
+        CommunityChestDeck.shuffle();
     }
 
     // Update is called once per frame
@@ -280,14 +282,10 @@ public class main : MonoBehaviour
     }
 
     //helper method, to take care of extra effects from changing cash, like bankruptcy
-    private bool updateCash(int currentPlayer, int amount) {
+    private bool updateCash(int currentPlayer, int amount) 
+    {
         playerData[currentPlayer].updateCash(amount);
         return true;
-    }
-
-    private void updateText(string newText)
-    {
-        textUpdater.setText(newText);
     }
 
     private void determineBoardEffect()
@@ -332,12 +330,14 @@ public class main : MonoBehaviour
             case int i when i == 2 || i == 18 || i == 34:
                 updateText("Community Chest Spot");
                 //reference to cardEffect method
+                DetermineCommunityCardEffect();
                 waitForSpace();
                 break;
 
             case int i when i == 7 || i == 23 || i == 37:
                 updateText("Chance Chest Spot");
                 // reference to cardEffect method
+                DetermineChanceCardEffect();
                 waitForSpace();
                 break;
 
@@ -361,49 +361,95 @@ public class main : MonoBehaviour
                 break;
         }
     }
-    private void DetermineCardEffect()
+    
+    private void DetermineChanceCardEffect()
     {
-        //updateText(ChanceCard.cardEffect);
-        
-        ChanceCard cardofChance = (ChanceCard)ChanceDeck.draw();
-        int cashEffect = cardofChance.cash;
-        int positionEffect = cardofChance.position;
-        updateText(cardofChance.cardEffect);
+        ChanceCard cardofChance = (ChanceCard)(ChanceDeck.draw());
+        //updateText(ChanceCard.CardEffect);
+        int cashEffect = -1; // = cardofChance.cash;
+        int positionEffect = -1; // = cardofChance.position;
+        updateText(cardofChance.cardEffect + "");
         switch (cardofChance.function)
         {
-            case 1:
-                //move to position
+            case 1://move to position
+                positionEffect = cardofChance.position;
                 playerMovement[currentPlayer].goToPoint(positionEffect);
                 break;
-            case 2:
-                //add cash
+            case 2://add cash
+                cashEffect = cardofChance.cash;
                 updateCash(currentPlayer, cashEffect);
                 break;
-            case 3:
-                //both 1 and 2
+            case 3://both 1 and 2
+                cashEffect = cardofChance.cash;
+                positionEffect = cardofChance.position;
                 playerMovement[currentPlayer].goToPoint(positionEffect);
                 updateCash(currentPlayer, cashEffect);
                 break;
-            case 4:
-                //get out of jail 
-                playerMovement[currentPlayer].goBackwards(positionEffect);
+            case 4://get out of jail 
+               /* playerMovement[currentPlayer].goBackwards(positionEffect);//*/
                 break;
-            case 5:
-                //go to jail
+            case 5://go to jail
                 goToJail(currentPlayer);
                 break;
-            case 6:
-                //update cash per property the current player owns by specific amount
+            case 6://update cash per property the current player owns by specific amount\\not implemented//
                 break;
-            case 7:
-                //update cash by subtracting cash from every player except current and pay current player that cash
+           /* case 7://update cash by subtracting cash from every player except current and pay current player that cash
+                int Bdaymoney = (amountOfPlayers-1)*10;
+                for (int i = 0; i<=(amountOfPlayers); i++)
+                {
+                    updateCash(i, cashEffect);
+                }
+                updateCash(currentPlayer, Bdaymoney);
+                break;*/
+            default:
+                //do nothing 
+                break;
+        }
+    }
+
+    private void DetermineCommunityCardEffect()
+    {
+        CommunityCard cardofCommunity = (CommunityCard)(CommunityChestDeck.draw());
+        //updateText(ChanceCard.CardEffect);
+        int cashEffect = -1;//= cardofCommunity.cash;
+        int positionEffect = -1;//= cardofCommunity.position;
+        updateText(cardofCommunity.cardEffect + "");
+        switch (cardofCommunity.function)
+        {
+            case 1://move to position
+                positionEffect = cardofCommunity.position;
+                playerMovement[currentPlayer].goToPoint(positionEffect);
+                break;
+            case 2://add cash
+                cashEffect = cardofCommunity.cash;
+                updateCash(currentPlayer, cashEffect);
+                break;
+            case 3://both 1 and 2
+                positionEffect = cardofCommunity.position;
+                cashEffect = cardofCommunity.cash;
+                playerMovement[currentPlayer].goToPoint(positionEffect);
+                updateCash(currentPlayer, cashEffect);
+                break;
+            case 4://get out of jail 
+                /* playerMovement[currentPlayer].goBackwards(positionEffect);//*/
+                break;
+            case 5://go to jail
+                goToJail(currentPlayer);
+                break;
+            case 6://update cash per property the current player owns by specific amount\\not implemented//
+                break;
+            case 7://update cash by subtracting cash from every player except current and pay current player that cash
+                int Bdaymoney = (amountOfPlayers - 1) * 10;
+                for (int i = 0; i <= (amountOfPlayers); i++)
+                {
+                    updateCash(i, cashEffect);
+                }
+                updateCash(currentPlayer, Bdaymoney);
                 break;
             default:
                 //do nothing 
                 break;
         }
-
-        
     }
 
     void buyProperty(int player, int cost, ImprovableProperty property)
@@ -431,6 +477,9 @@ public class main : MonoBehaviour
     {
         turnTracker = 50000;
     }
-
+    
+    private void updateText(string newText)
+    {
+        textUpdater.setText(newText);
+    }
 }
-

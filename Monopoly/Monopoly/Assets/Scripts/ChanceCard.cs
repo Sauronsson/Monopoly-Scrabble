@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ChanceCard : Card
 {
-    public string cardEffect;
-    public int function;
-    public int cash;
-    public int position;
+    public string cardEffect = "";
+    public int function = -1;
+    public int cash = -1;
+    public int position = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +19,10 @@ public class ChanceCard : Card
     void Update()
     {
         
+    }
+
+    public string ToString()
+    {
+        return cardEffect;
     }
 }
