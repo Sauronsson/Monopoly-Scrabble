@@ -19,6 +19,7 @@ public class main : MonoBehaviour
     public GameObject CommunityCard;
     public GameObject playerInput;
     public InputField playerInputText;
+    
 
     private UIupdate textUpdater;
     private Path positions;
@@ -597,6 +598,8 @@ public class main : MonoBehaviour
         updateCash(player, -1 * cost);
         property.currentOwner = playerData[player];
         property.currentOwnerInt = player;
+        //reference to propertyhelpers
+        playerData[player].addImprovableProperty(property);
     }
 
     void waitForSpace()
