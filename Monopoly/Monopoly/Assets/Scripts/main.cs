@@ -83,8 +83,58 @@ public class main : MonoBehaviour
         switch (turnTracker) {
 
             //beginning function, tbd on use
+            case -2:
+                updateText("Player " + (currentPlayer + 1).ToString() + " has been in jail for " + (playerData[currentPlayer].jailCounter + 1) + " turns...... (1) Roll for doubles, (2) Pay $50 fine, (3) Use get out of jail card");
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    int roll1 = UnityEngine.Random.Range(1, 7);
+                    int roll2 = UnityEngine.Random.Range(1, 7);
+                    if (roll1 == roll2)
+                    {
+                        updateText("Dice 1 Rolled: " + roll1.ToString() + "\t\t\t You got a double! You may leave!" + "\t\t\tDice 2 Rolled: " + roll2.ToString());
+                        playerData[currentPlayer].inJail = false;
+                        turnTracker = 0;
+                    }
+                    else if (playerData[currentPlayer].jailCounter > 2)
+                    {
+                        updateText("You've been here long enough, get outta here!");
+                        playerData[currentPlayer].inJail = false;
+                        turnTracker = 0;
+                    }
+                    else
+                    {
+                        updateText("Dice 1 Rolled: " + roll1.ToString() + "\t\t\t Looks like you're staying here a bit longer buckaroo " + "\t\t\tDice 2 Rolled: " + roll2.ToString());
+                        turnTracker = 2;
+                        playerData[currentPlayer].jailCounter = playerData[currentPlayer].jailCounter + 1;
+                    }
+                    waitForSpace();
+                    break;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    updateText("Thought we wouldn't take a bribe eh? ACAB");
+                    playerData[currentPlayer].inJail = false;
+                    turnTracker = 0;
+                    waitForSpace();
+                    break;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    updateText("Papers please, you can do better than that....");
+                    waitForSpaceReturnHere();
+                    break;
+                }
+                break;
+
             case 0:
-                turnTracker++;
+                if (playerData[currentPlayer].inJail) //so we can have a front menu before jail pops up
+                {
+                    turnTracker = -2;
+                }
+                else
+                {
+                    turnTracker++;
+                }
                 break;
 
             //Move player character to next location. Keep moving until no doubles. on 3 doubles send to jail
@@ -147,6 +197,8 @@ public class main : MonoBehaviour
                     determineBoardEffect();
                 }
                 break;
+
+
 
             //Used for if we need to wait for the player to press space (usually text dialog)
             case 50000:
@@ -392,6 +444,7 @@ public class main : MonoBehaviour
     private bool goToJail(int currentPlayer)
     {
         playerMovement[currentPlayer].goToJail();
+        playerData[currentPlayer].inJail = true;
         return true;
     }
 
@@ -409,6 +462,7 @@ public class main : MonoBehaviour
         switch (playerMovement[currentPlayer].routePosition)
         {
             case 0: //GO
+                turnTracker++;
                 break;
 
             case 4: //INCOME TAX
