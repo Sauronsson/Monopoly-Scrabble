@@ -30,12 +30,12 @@ public class UIupdate : MonoBehaviour
 
         if (property != null)
         {
-            textObject.text = (property.name + ": " + property.currentOwnerInt.ToString() + "   H: " + property.houseCount.ToString());
+            textObject.text = (property.name + ": " + (property.currentOwnerInt+1).ToString() + "   H: " + property.houseCount.ToString());
         }
 
         if (oProperty != null)
         {
-            textObject.text = (oProperty.name + ": " + oProperty.currentOwnerInt.ToString());
+            textObject.text = (oProperty.name + ": " + (oProperty.currentOwnerInt+1).ToString());
         }
     }
 

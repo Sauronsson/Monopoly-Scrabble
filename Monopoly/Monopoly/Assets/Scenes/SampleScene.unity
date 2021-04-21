@@ -4062,6 +4062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: WaterWorks
+  type: 1
   position: 29
   cost: 150
   rent: 20
@@ -4069,6 +4070,7 @@ MonoBehaviour:
   rent3: 0
   rent4: 0
   mortgageValue: 75
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &786605489
@@ -4307,6 +4309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Electric Company
+  type: 1
   position: 13
   cost: 150
   rent: 20
@@ -4314,6 +4317,7 @@ MonoBehaviour:
   rent3: 0
   rent4: 0
   mortgageValue: 75
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &829578880
@@ -5772,6 +5776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Reading Railroad
+  type: 0
   position: 5
   cost: 200
   rent: 25
@@ -5779,6 +5784,7 @@ MonoBehaviour:
   rent3: 100
   rent4: 200
   mortgageValue: 100
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &1120573749
@@ -6563,6 +6569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: B & O Railroad
+  type: 0
   position: 26
   cost: 200
   rent: 25
@@ -6570,6 +6577,7 @@ MonoBehaviour:
   rent3: 100
   rent4: 200
   mortgageValue: 100
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &1268404066
@@ -7665,6 +7673,8 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
+  railroadOwned: -1
+  utilitiesOwned: -1
 --- !u!1 &1461242310
 GameObject:
   m_ObjectHideFlags: 0
@@ -9428,6 +9438,8 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
+  railroadOwned: -1
+  utilitiesOwned: -1
 --- !u!1 &1782346121
 GameObject:
   m_ObjectHideFlags: 0
@@ -9495,6 +9507,8 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
+  railroadOwned: -1
+  utilitiesOwned: -1
 --- !u!1 &1792301771
 GameObject:
   m_ObjectHideFlags: 0
@@ -10847,6 +10861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Pennsylvania Railroad
+  type: 0
   position: 16
   cost: 200
   rent: 25
@@ -10854,6 +10869,7 @@ MonoBehaviour:
   rent3: 100
   rent4: 200
   mortgageValue: 100
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &2012761642
@@ -11092,6 +11108,8 @@ MonoBehaviour:
   passedGo: 0
   jailCounter: 0
   currentOwedCash: 0
+  railroadOwned: -1
+  utilitiesOwned: -1
 --- !u!1 &2016132625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11364,6 +11382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Short Line
+  type: 0
   position: 36
   cost: 200
   rent: 25
@@ -11371,6 +11390,7 @@ MonoBehaviour:
   rent3: 100
   rent4: 200
   mortgageValue: 100
+  rents: 
   currentOwner: {fileID: 0}
   currentOwnerInt: -1
 --- !u!1 &2025569297
@@ -11910,7 +11930,7 @@ MonoBehaviour:
   - {fileID: 686924312}
   - {fileID: 1973558920}
   - {fileID: 1403070676}
-  size: 1490350
+  size: 1580140
 --- !u!4 &2077852190
 Transform:
   m_ObjectHideFlags: 0
