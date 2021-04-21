@@ -54,6 +54,9 @@ public class CardDeck : MonoBehaviour
             Card temp = cardList[i];
             cardList[i] = cardList[maxPoint];
             cardList[maxPoint] = temp;
+            float tempf = randomRef[i];
+            randomRef[i] = randomRef[maxPoint];
+            randomRef[maxPoint] = tempf;
         }
     }
 
